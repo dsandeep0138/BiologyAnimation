@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)file:///C:/Users/sanje/Documents/Texas%20A&m/606/Project/jqueryDemo/jQueryExample.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>jQuery example: drag and drop</title>
+        <style>
+            body {
+                font-size: 32px;
+            }
+
+            .question{
+                font-size: 15px;
+                outline-style: solid;
+                background: cyan;
+                margin: 20px;
+                width: 250px;
+            }
+
+            .answer{
+                font-size: 12px;
+                margin: 5px;
+                width: 100px;
+            }
+            .container {
+                position: relative;
+                text-align: center;
+                float : left;
+                width: 550px;
+                height:450px;
+            }
+            .answer-container{
+                float : left ;
+                position: absolute;
+                text-align: left;
+                top: 100px;
+                left: 480px;
+                width: 200px;
+                opacity: 1.0;
+                background-color: white;
+                border: 2px solid black;
+            }
+        </style>
+    </head>
+    <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="DD_slide38.js"></script>
+    <div>
+    <div class="container" >
+        <img width="600" style= "z-index:-1" src="slide_38.jpg">
+        <button id="submit">Submit</button>
+        <div class="question" style="position: absolute;top: 120px;left: 80px;width: 60px;">1</div>
+        <div class="question" style="position: absolute;top: 100px;left: 80px;width: 90px;">2</div>
+        <div class="question" style="position: absolute;top: 80px;left: 100px;width: 120px;">3</div>
+        <div class="question" style="position: absolute;top: 45px;left: 155px;width: 90px;">4</div>
+        <div class="question" style="position: absolute;top: 30px;left: 275px;width: 70px;">5</div>
+        <div class="question" style="position: absolute;top: 43px;left: 350px;width: 70px;">6</div>
+        <div class="question" style="position: absolute;top: 65px;left: 370px;width: 100px;">7</div>
+        <div class="question" style="position: absolute;top: 187px;left: 380px;width: 90px;">8</div>
+        <div class="question" style="position: absolute;top: 257px;left:360px;width: 90px;">9</div>
+        <div class="question" style="position: absolute;top: 285px;left: 300px;width: 90px;">10</div>
+        <div class="question" style="position: absolute;top: 245px;left: 55px;width: 90px;">11</div>
+
+    </div>
+    <div class= "answer-container">
+        <div class="answer" id="4" >Mitochondria</div>
+        <div class="answer" id="3">Cytosol</div>
+        <div class="answer" id="2" >Cytoskeleton</div>
+        <div class="answer" id="1" >Lysosome</div>
+        <div class="answer" id="11" >Smooth endoplasmic reticulum</div>
+        <div class="answer" id="10" >Golgi apparatus</div>
+        <div class="answer" id="9" >Nucleus</div>
+        <div class="answer" id="8" >Vesicles</div>
+        <div class="answer" id="7" >Plasma membrane</div>
+        <div class="answer" id="6">Rough endoplasmic Reticulum</div>
+        <div class="answer" id="5" >Ribosome</div>
+    </div>
+
+
+    </div>
+
+
+
+
+</body></html>
