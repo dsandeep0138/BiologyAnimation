@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
+
+<style>
+            body {
+
+               
+            }
+            .box {
+            	width: 93%;
+                height: 60px;
+                
+                border: solid 1px;
+                
+
+            }
+            .big_box{
+                width: 93%;
+                height: 90px;
+                
+                border: solid 1px;
+            }
+            
+            #a {
+                
+                background: #AED6F1;
+                position: absolute;
+                margin-top: 95px;
+                
+            }
+            #b {
+                background: #2980B9;
+                position: absolute;
+                margin-top: 170px;
+               
+            }
+            #c {
+                background: #AED6F1;
+                position: absolute;
+                margin-top: 245px;
+                
+            }
+            #d {
+                background: #2980B9;
+                position: absolute;
+                margin-top: 325px;
+                
+            }
+            #e {
+                background: #AED6F1;
+                position: absolute;
+                margin-top: 440px;
+                
+            }
+            #f {
+                background: #2980B9;
+                position: absolute;
+                margin-top: 565px;
+                
+            }
+            #g {
+                background: #AED6F1;
+                position: absolute;
+                margin-top: 640px;
+                
+            }
+            #h {
+                background: #2980B9;
+                position: absolute;
+                margin-top: 765px;
+                
+            }
+            .container {
+       border: 1px solid #DDDDDD;
+       width: 95%;
+       height: 100%;
+    }
+    
+  </style>
+
+
+
+</head>
+
+<body>
+
+
+ <div >
+        
+        
+        <div class= "box" id="a"></div>
+        <div class= "box" id="b"></div>
+        <div class= "box" id="c"></div>
+
+        <div class= "big_box" id="d"></div>
+
+        <div class= "big_box" id="e"></div>
+        <div class= "box" id="f"></div>
+        <div class= "big_box" id="g"></div>
+        <div class= "big_box" id="h"></div>
+        
+    </div>
+
+     <div class="container">
+       <img src="slide_12_.png" width="100%">
+    </div>
+
+
+
+    <script type="text/javascript">
+    	$( "#c" ).click(function() {
+  		$( "#c" ).remove();});
+
+
+  		$( "#b" ).click(function() {
+  		$( "#b" ).remove();});
+
+  		$( "#a" ).click(function() {
+  		$( "#a" ).remove();});
+
+        $( "#d" ).click(function() {
+        $( "#d" ).remove();});
+
+        $( "#e" ).click(function() {
+        $( "#e" ).remove();});
+
+        $( "#f" ).click(function() {
+        $( "#f" ).remove();});
+
+        $( "#g" ).click(function() {
+        $( "#g" ).remove();});
+
+        $( "#h" ).click(function() {
+        $( "#h" ).remove();});
+
+
+
+
+		$(document).ready(function(){
+		  $("button").click(function(){
+		     $("p").hide();
+		  });
+		});
+
+    </script>
+
+</body>
