@@ -25,6 +25,8 @@ $(document).ready(function () {
                 $(this).css('background', 'green');
             }else{
                 $(this).css('background', 'red');
+                $('#hint').text('Hint: Go back and study the diagram in the section Organisms');
+                $('#hint').css('font', '12px');
             }
         });
        alert( "You got " + correct +" answers correct.\n");

@@ -25,7 +25,7 @@ $(document).ready(function () {
                 $(this).css('background', 'green');
             }else{
                 $(this).css('background', 'red');
-                $('#hint').text('Hint: Go back and study the diagram in the section Organisms');
+                $('#hint').text('Hint: Go back and look at Cell Theory Slides');
                 $('#hint').css('font', '12px');
             }
         });
