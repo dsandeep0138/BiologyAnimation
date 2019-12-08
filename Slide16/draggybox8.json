@@ -1,0 +1,133 @@
+{
+	"nodeContent" : {
+		"content" : {
+			"title" : "Knowledge Check: Cell Types",
+			"text" : "With the knowledge you have obtained decide whether the images below are prokaryotic or eukaryotic. ",
+			"media" : [
+				{
+					"role" : "BgBase1",
+					"type" : "Image",
+					"variant" : "Basic",
+					"repeat" : "no-repeat",
+					"position" : "center center",
+					"bgsize" : "cover",
+					"display" : "bg_essential_3.png"
+				}
+			],
+			"miniApps" : [
+				{
+					"role" : 		"MainSandbox1",
+					"type" : 		"Custom",
+					"variant" : 	"Basic",
+					"launched" :  	"Slide16",
+					"apiSet" : 		"Basic",
+					"maxW" : 		"Auto",
+					"minH" : 		"Auto",
+					"maxH" : 		"Auto",
+					"caption" : 	""
+				}
+			]
+		},
+		"type" : "Basic",
+		"variant" : "Basic",
+		"theme" : "Basic",
+		"options" : {
+			"ImageHPosition" : "Left",
+			"ImageVPosition" : "Top",
+			"ImageW" : "100",
+			"ImageStaticToggle" : "On",
+			"ImageZoomToggle" : "On",
+			"TextStyle" : "PageWidth"
+		}
+	},
+	"nodeAssessment" : {
+		"type" : "Multiple Answer - Multiple Choice",
+		"variant" : "Media",
+		"theme" : "Basic",
+		"instruction" : "Which of the following are Eukaryotic? Click all that apply",
+		"shuffle" : "false",
+		"outputs" : [
+			{
+				"cid" : "1",
+				"outputStatus" : "Incorrect",
+				"media" : [
+					{
+						"role" : "ChoiceDisplay",
+						"type" : "Image",
+						"variant" : "Basic",
+						"display" : "slide_16_4.jpg"
+					}
+				],
+				"text" : ""
+			},
+			{
+				"cid" : "2",
+				"outputStatus" : "Correct",
+				"media" : [
+					{
+						"role" : "ChoiceDisplay",
+						"type" : "Image",
+						"variant" : "Basic",
+						"display" : "slide_16_3.jpg"
+					}
+				],
+				"text" : ""
+			},
+			{
+				"cid" : "3",
+				"outputStatus" : "Correct",
+				"media" : [
+					{
+						"role" : "ChoiceDisplay",
+						"type" : "Image",
+						"variant" : "Basic",
+						"display" : "slide_16.jpg"
+					}
+				],
+				"text" : ""
+			},
+			{
+				"cid" : "4",
+				"outputStatus" : "Incorrect",
+				"media" : [
+					{
+						"role" : "ChoiceDisplay",
+						"type" : "Image",
+						"variant" : "Basic",
+						"display" : "slide_16_2.jpg"
+					}
+				],
+				"text" : ""
+			}
+		],
+		"specialHandling" : {
+			"type" : "MAMC",
+			"variant" : "Basic",
+			"dirtyCorrect" : "Incorrect",
+			"quasiCorrect" : "Incorrect",
+			"data" : [
+				{
+					"targetNode" : "2",
+					"outputStatus" : "Correct",
+					"outputBehavior" : "Step Forward",
+					"feedback" : {
+						"text" : "Good Job! Eukaryotic cells differ from prokaryotic cells because they have membrane bound organelles and nuclei. ",
+						"type" : "Basic"
+					}
+				},
+				{
+					"targetNode" : "2",
+					"outputStatus" : "Incorrect",
+					"outputBehavior" : "Redirect",
+					"feedback" : {
+						"text" : "Nice try but Eukaryotic cells have membrane bound organelles and no flagella present.",
+						"type" : "Basic"
+					}
+				}
+			]
+		}
+	},
+	"nodeAuthoringData" : {
+		"stepNotes" : "Insert mini-application.<br /><br />Please see Slide 16 in powerpoint for interaction.<br /><br />From animation notes:<br />Student clicks to reveal picture with hint. An additional click should cover the incorrect answer and leave the correct answer from the title bar.<br /><br />There are 4 layers of pictures that should have this interaction.<br />Layer 1: Image with Flagella<br />Answer: Prokaryote<br /><br />Layer 2: Image showing cells and organelles<br />Answer: Eukaryote<br /><br />Layer 3: Image showing membrane-bound organelles<br />Answer: Prokaryote<br /><br />Layer 4: Microscope image of cells with nuclei<br />Answer: Eukaryote"
+	}
+}
