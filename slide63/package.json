@@ -1,0 +1,28 @@
+{
+  "name": "slide63",
+  "version": "1.0.0",
+  "description": "",
+  "main": "DD_slide63.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chioujiin/slide63.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chioujiin/slide63/issues"
+  },
+  "homepage": "https://github.com/chioujiin/slide63#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "jquery": "^3.4.1",
+    "jsdom": "^16.2.1",
+    "mocha": "^7.1.1"
+  }
+}
