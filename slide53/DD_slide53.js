@@ -1,34 +1,100 @@
 $(document).ready(function () {
-    var correct =0;
-    $(".answer").draggable();
+    var move_to = function( $obj, $target){
+        $parent = $obj.parent();
+        $parent.detach($obj);
+        $target.append($obj);
+        update($parent);
+        update($target);
+    }
+    var update = function($con){
+        if($con.hasClass("question")){
+            $children = $con.children();
+            if($children.length == 0){
+                $con.text($con.attr("id"));
+            } 
+            if($children.hasClass("answer")){
+                $con.addClass("has-answer");
+                $con.contents().each(function(){
+                    if(!$(this).hasClass("answer")){
+                        $(this).remove();
+                    }
+                });
+            }else{
+                $con.removeClass("has-answer");
+            }
+        }else if($con.hasClass("answer-container")){
+        }
+    }
+    $(".answer").draggable({
+            revert: "invalid",
+            revertDuration: 0,
+            stop:function(ev, ui){
+                $q = $(this);
+                $q.css("top", "");
+                $q.css("left", "");
+            }
+    });
     $(".question").droppable({
-        refreshPositions: true,
-        over: function(event, ui) {
-            $(this).css('background', 'orange');
-        },
-        out: function(event, ui) {
-            $(this).css('background', 'cyan');
+        accept: ".answer",
+        tolerance: "pointer",
+        addClasses: false,
+        classes: {
+            "ui-droppable-hover": "answer-hover"
         },
         drop: function(event, ui) {
-            $(this).css('background', 'orange');
-            var $el = ui.draggable;
-            var pid= $el.attr("id");
-            $('#'+pid).draggable("disable");
-            $(this).attr("id",pid);
+            var $q = $(this);
+            $ans = ui.draggable;
+            if($q.hasClass("has-answer")){
+                move_to($q.children(), $(".answer-container"));
+            }
+            move_to($ans, $q);
         }
     });
+    $(".question").dblclick(function(){
+        $q = $(this)
+        if($q.hasClass("has-answer")){
+            move_to($q.children(), $(".answer-container"));
+        }
+    });
+    /*
     $( "#submit" ).click(function() {
+        var correct =0;
         $('.question').each(function() {
-            console.log($(this).attr("id"));
-            if($(this).attr("id") == $(this).text()){
+            $q = $(this);
+            if("a" + $q.attr("id") == $q.children().attr("id")){
                 correct=correct+1;
-                $(this).css('background', 'green');
+                $q.css('background', 'green');
+                $q.children().draggable('disable');
+                $q.droppable('disable');
+                $q.off('dblclick');
             }else{
-                $(this).css('background', 'red');
-                $('#hint').text('Hint: Go back and study the diagram in the section Organisms');
+                $('#hint').text('Hint: Go back and look at Cell Theory Slides');
                 $('#hint').css('font', '12px');
             }
         });
        alert( "You got " + correct +" answers correct.\n");
+    }); 
+    */
+   $( "#submit" ).click(function() {
+        var correct =0;
+        $('.question').each(function() {
+            $q = $(this);
+            if( $q.attr("id") == $q.children().attr("id")){
+
+                $('#hint').text('Hint: Go back and look at Cell Theory Slides');
+                $('#hint').css('font', '12px');
+
+            }else{
+                correct=correct+1;
+                $q.css('background', 'green');
+                $q.children().draggable('disable');
+                $q.droppable('disable');
+            }
+        });
+        alert( "You got " + correct +" answers correct.\n");
+    });
+
+    $('.question').each(function(){
+        update($(this));
     });
 });
