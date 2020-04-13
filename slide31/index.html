@@ -1,178 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
+    <script type="text/javascript" src="animation.js"></script>
 
-
-
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
-
-<style>
-            body {
-
-              
-			   
-            }
-            
-            .img1 {
-			
-				position:relative;
-			   
-			   float:left;
-			    width:65%;
-			}
-			.img2 {
-				position:relative;
-				 
-			}
-			.text-block {
-			  position: absolute;
-			  top: 10px;
-			  left: 15px;
-			 
-			  
-			  padding-left: 20px;
-			  padding-right: 20px;
-			  
-			  
-			}
-			#a{
-			position: absolute;
-			
-			top: 77px;
-			left: 90px;
-			
-			 
-			}
-			
-			#b{
-			position: absolute;
-			top: 140px;
-			left: 60px;
-			
-			 
-			}
-			#c{
-			position: absolute;
-			top: 365px;
-			left: 100px;
-			
-			 
-			}
-			
-			#d{
-			position: absolute;
-			top: 400px;
-			left: 150px;
-			
-			
-			 
-			}
-			#e{
-			position: absolute;
-			top: 425px;
-			left: 50px;
-			
-			 
-			}
-			#submit1 {
-			position: absolute; 
-			background-color: #5F3A8A;
-			top: 400px;
-			left: 700px;
-			font-size: 16px;
-			padding: 15px 32px;
-			color: white;
-			}
-			
-			#hint {
-			font-size: 20px;
-			 top: 400px;
-			 
-			}
-			
-			
-  </style>
-
-
-
-</head>
-
-<body>
-
-
-	<div class="outer">
-     <div class="img1">
-       <img src="can_you_master_the_cells_mastermind.jpg" >
-	   
-	   
-  
+    <div id="masterContainer" class="masterContainer" data-viewportNarrow="false">
+      <div class="question-container" >
+        <img width="600" style= "z-index:-1" draggable="false" src="can_you_master_the_cells_mastermind.jpg">
+        <div class="question" style="position: absolute;top: 68px;left: 78px;width: 163px;height: 23px" id=1></div>
+        <div class="question" style="position: absolute;top: 133px;left: 48px;width: 160px; height: 23px" id=2></div>
+        <div class="question" style="position: absolute;top: 358px;left: 77px;width: 185px;height: 23px" id=3></div>
+        <div class="question" style="position: absolute;top: 391px;left: 136px;width: 102px; height:23px" id=4></div>
+        <div class="question" style="position: absolute;top: 419px;left: 45px;width: 130px; height:23px" id=5></div>
+      </div>
+      <div class="right-column">
+        <div class= "answer-container">
+          <center>
+            <b>Word Bank</b>
+          </center>
+          <div class="answer" id="a2" >Ribosomes</div>
+          <div class="answer" id="a4" >DNA</div>
+          <div class="answer" id="a3" >Chromatin</div>
+          <div class="answer" id="a1" >Nucleolus</div>
+          <div class="answer" id="a5" >Protein</div>
+        </div>
+        <div class="submit-container">
+          <button id="submit" >Submit</button>
+        </div>
+      </div>
     </div>
-	<div class="img2">
-       <img src="slide_31_word_bank.jpg" >
-    </div>
-	</div>
-	
-	<div class="txt">
-			<form >
-				  <input id="a" type="text" name="ans1" >
-				  <input id="b" type="text" name="ans2">
-				   <input id="c" type="text" name="ans3">
-				   <input id="d" type="text" name="ans4" >
-				   <input id="e" type="text" name="ans5">
-				   
-				   <p id="hint"></p>
-				   <button id="submit1" type="button" >Check</button>
-				   
-				  
-				</form>
-	</div>
-	
-
-
-    <script type="text/javascript">
-	
-	$('#submit1').click(function(){
-	var s=''
-   if($('#a').val().toLowerCase() != 'nucleolus'){
-	 s+='Hint1: Protien Rich region: Go back and read about the Nucleolus \r\n'
-      
-   }
-   
-   if ($('#b').val().toLowerCase() != 'ribosomes') {
-			s+='Hint2: Aids in the formation of: Go back and read about the Nucleolus \r\n'
-	   }
-	   
-	if ($('#c').val().toLowerCase() != 'chromatin')  {
-			s+='Hint3: The condensed genetic material of the cell: Go back and read about the Cell Nucleus \r\n'
-	   }
-	   
-	if (($('#d').val().toLowerCase() != 'dna') ||  ($('#e').val().toLowerCase() != 'proteins') ){
-	
-			s+='Hint4: Consists of : Go back and read about the Cell Nucleus'
-	   }
-	   
-	   if (s=='')
-	   {
-			$('#hint').text("Congratulations!!!! Correct Answer")
-			
-			
-	   }
-	   else
-	   {
-			$('#hint').text(s)
-	   }
-	
-
-	   
-});
-	
-	   
-	   
-
-	
-
-
-    </script>
-
-</body>
+    <div id = "hint" style="float:right;"></div>
+    <div id="viewPortNarrowThreshold"></div>
+  </body>
+</html>

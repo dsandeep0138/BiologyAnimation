@@ -3,28 +3,32 @@ body {
     height: 500px;
 }
 
-.question-container {
-    position: relative;
+div.question-container {
+    position: absolute;
     text-align: center;
     float : left;
-    width: 550px;
     height:450px;
 }
 
-.answer-container{
-    float : left ; 
+div.right-column{
     position: absolute;
+    left: 600px;
+    width: 200px;
+    height:450px;
+}
+
+div.answer-container{
+    float : left ; 
     text-align: left;
-    top: 5px; 
-    left: 425px;
     width: 200px; 
-    height: 260px;
+    height: 350px;
     opacity: 1.0;
-    background-color: white;border: 2px solid black;
+    background-color: white;
+    border: 2px solid black;
 }
 
 .question{
-    font-size: 15px;
+    font-size: 20px;
     border: 2px solid black;
     background: cyan;
     text-align: center;
@@ -43,7 +47,7 @@ body {
 }
 
 .answer{
-    font-size: 12px;
+    font-size: 20px;
     cursor: pointer;
     margin: 5px;
 }
@@ -51,4 +55,18 @@ body {
 .question > .answer{
     width: 100%;
     margin: 0px;
+}
+
+div.submit-container{
+    position: absolute;
+    top: 380px;
+    width: 200px;
+    text-align: center;
+}
+
+#hint{
+    position:absolute;
+    padding: 20px;
+    left: 800px;
+    width: 300px;
 }

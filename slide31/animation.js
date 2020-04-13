@@ -68,7 +68,7 @@ $(document).ready(function () {
                 $q.droppable('disable');
                 $q.off('dblclick');
             }else{
-                $('#hint').text('Hint: Go back and look at Cell Theory Slides');
+                $('#hint').text('Hint: Go back and read about the Nucleolus' );
                 $('#hint').css('font', '12px');
             }
         });
