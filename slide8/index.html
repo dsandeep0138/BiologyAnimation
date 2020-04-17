@@ -4,28 +4,36 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="js/iframeResizer.contentWindow.min.js"></script>
-    <script src="DD_slide8.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
+    <script type="text/javascript" src="animation.js"></script>
 
-    <div id="masterContainer" class="masterContainer" data-viewportNarrow="false">
+    <div id="master-container">
       <div class="question-container" >
-        <img width="600" style= "z-index:-1" draggable="false" src="slide_8.png">
-        <button id="submit" style = "float : right; ">Submit</button>
-        <div class="question" style="position: absolute;top: 60px;left: 75px;width: 20px;height: 20px" id=1></div>
-        <div class="question" style="position: absolute;top: 60px;left: 120px;width: 80px; height: 20px" id=2></div>
-        <div class="question" style="position: absolute;top: 115px;left: 150px;width: 50px;height: 20px" id=3></div>
-        <div class="question" style="position: absolute;top: 175px;left: 5px;width: 130px; height:20px" id=4></div>
+        <div class="question" style="top:23.5%; left:18.5%; width:5%; height:7%" id=1></div>
+        <div class="question" style="top:23.5%; left:41%; width:8%; height:7%" id=2></div>
+        <div class="question" style="top:45%; left:37%; width:8%; height:7%" id=3></div>
+        <div class="question" style="top:67%; left:1.5%; width:16%; height:7%" id=4></div>
       </div>
       <div class= "answer-container">
-        <div class="answer" id="a1" >one</div>
-        <div class="answer" id="a2" >more cells</div>
-        <div class="answer" id="a3" >life</div>
-        <div class="answer" id="a4" >existing cells</div>
+        <div class="word-bank">
+          <center>
+            <span style="font-size:2.5vw; font-weight:bold">Word Bank</span>
+          </center>
+          <div class="answer" id="a4" >existing</div>
+          <div class="answer" id="a2" >cells</div>
+          <div class="answer" id="a1" >one</div>
+          <div class="answer" id="a3" >life</div>
+        </div>
+        <div class="submit-container">
+          <button id="submit" >Submit</button>
+        </div>
+      </div>
+      <div class="hint">
+        <div class="hint-content">
+        </div>
       </div>
     </div>
-    <div id = "hint" style="float:right;"></div>
-    <div id="viewPortNarrowThreshold"></div >
   </body>
 </html>
