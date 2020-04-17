@@ -1,34 +1,64 @@
-body {
-    font-size: 20px;
-    height: 500px;
+body{
+    font-size: 1.5vw;
+    background-color: white;
+}
+
+#master-container{
+    position: relative;
+    width: 100%;
+    padding-top: 50%;
 }
 
 div.question-container {
     position: absolute;
     text-align: center;
-    float : left;
-    height:450px;
-}
-
-div.right-column{
-    position: absolute;
-    left: 600px;
-    width: 200px;
-    height:450px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 65%;
+    background-image: url("can_you_master_the_cells_mastermind.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 div.answer-container{
-    float : left ; 
-    text-align: left;
-    width: 200px; 
-    height: 350px;
+    position: absolute;
+    top: 0;
+    left: 65%;
+    width: 35%; 
+    height: 100%;
     opacity: 1.0;
     background-color: white;
+}
+
+div.word-bank{
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 2%;
+    bottom: 20%;
+    padding: 3%;
     border: 2px solid black;
 }
 
+div.submit-container{
+    position: absolute;
+    top: 80%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    display: table-cell;
+    padding-top: 7%;
+}
+
+#submit{
+    font-size: 1.5vw;
+    width: 30%;
+}
+
 .question{
-    font-size: 20px;
+    position: absolute;
     border: 2px solid black;
     background: cyan;
     text-align: center;
@@ -47,26 +77,35 @@ div.answer-container{
 }
 
 .answer{
-    font-size: 20px;
     cursor: pointer;
-    margin: 5px;
+    margin: 2%;
 }
 
 .question > .answer{
-    width: 100%;
     margin: 0px;
 }
 
-div.submit-container{
+div.hint{
     position: absolute;
-    top: 380px;
-    width: 200px;
-    text-align: center;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    opacity: 0.9;
+    background-color: white;
+    visibility: hidden;
 }
 
-#hint{
-    position:absolute;
-    padding: 20px;
-    left: 800px;
-    width: 300px;
+div.hint-content{
+    position: absolute;
+    width: 100%;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align: center;
+    height: 30%;
+    margin:auto;
 }
+
+

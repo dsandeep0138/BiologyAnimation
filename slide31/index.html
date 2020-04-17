@@ -9,19 +9,18 @@
     <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
     <script type="text/javascript" src="animation.js"></script>
 
-    <div id="masterContainer" class="masterContainer" data-viewportNarrow="false">
+    <div id="master-container">
       <div class="question-container" >
-        <img width="600" style= "z-index:-1" draggable="false" src="can_you_master_the_cells_mastermind.jpg">
-        <div class="question" style="position: absolute;top: 68px;left: 78px;width: 163px;height: 23px" id=1></div>
-        <div class="question" style="position: absolute;top: 133px;left: 48px;width: 160px; height: 23px" id=2></div>
-        <div class="question" style="position: absolute;top: 358px;left: 77px;width: 185px;height: 23px" id=3></div>
-        <div class="question" style="position: absolute;top: 391px;left: 136px;width: 102px; height:23px" id=4></div>
-        <div class="question" style="position: absolute;top: 419px;left: 45px;width: 130px; height:23px" id=5></div>
+        <div class="question" style="top:15.5%; left:18%; width:18%; height:4%" id=1></div>
+        <div class="question" style="top:29.7%; left:9%; width:18%; height:4%" id=2></div>
+        <div class="question" style="top:78%; left:19%; width:18%; height:4%" id=3></div>
+        <div class="question" style="top:86%; left:23%; width:18%; height:4%" id=4></div>
+        <div class="question" style="top:91%; left:8%; width:18%; height:4%" id=5></div>
       </div>
-      <div class="right-column">
-        <div class= "answer-container">
+      <div class= "answer-container">
+        <div class="word-bank">
           <center>
-            <b>Word Bank</b>
+            <span style="font-size:2.5vw; font-weight:bold">Word Bank</span>
           </center>
           <div class="answer" id="a2" >Ribosomes</div>
           <div class="answer" id="a4" >DNA</div>
@@ -33,8 +32,10 @@
           <button id="submit" >Submit</button>
         </div>
       </div>
+      <div class="hint">
+        <div class="hint-content">
+        </div>
+      </div>
     </div>
-    <div id = "hint" style="float:right;"></div>
-    <div id="viewPortNarrowThreshold"></div>
   </body>
 </html>
