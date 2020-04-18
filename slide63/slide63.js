@@ -1,9 +1,8 @@
-// function called when a div is selected, check if only one and turn yellow
-
 $(document).ready(function () {
   var clicked = [];
   var matched = {};
+  var error = {"row-1":{}, "row-2":{}};
   $(".box").click(function(){
-    Matching(this, clicked, matched);
+    Matching(this, clicked, matched, error);
   });
 });

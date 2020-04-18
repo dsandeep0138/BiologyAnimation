@@ -7,35 +7,32 @@
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
   <script type="text/javascript" src="my_modules/utils.js"></script>
   <script type="text/javascript" src="slide63.js"></script>
 
   <div id="masterContainer" class="masterContainer" data-viewportNarrow="false">
-  <div style = "font-size : 18px; "> Select one Image from the top and the corresponding answer image to match them </div>
-  <div class="image-container" >
-    <img width="600" style= "z-index:-1" src="slide63_1.png">
-    <div class="row-1">
-      <div class="box" style="position: absolute;top: 10px;left: 5px;width: 125px;height: 80px" id="1">1</div>
-      <div class="box" style="position: absolute;top: 10px;left: 140px;width: 100px; height: 80px" id="2">2</div>
-      <div class="box" style="position: absolute;top: 10px;left: 250px;width: 105px;height: 80px" id="3">3</div>
-      <div class="box" style="position: absolute;top: 10px;left: 365px;width: 100px; height:80px" id="4">4</div>
-      <div class="box" style="position: absolute;top: 10px;left: 475px;width: 120px; height:80px" id="5">5</div>
+    <div style = "font-size : 18px; "> Select one Image from the top and the corresponding answer image to match them </div>
+    <div class="image-container" >
+        <img width="600" style= "z-index:-1" src="slide63_1.png">
+        <div class="row-1">
+          <div class="box" style="position: absolute;top: 10px;left: 5px;width: 125px;height: 80px" id="1">1</div>
+          <div class="box" style="position: absolute;top: 10px;left: 140px;width: 100px; height: 80px" id="2">2</div>
+          <div class="box" style="position: absolute;top: 10px;left: 250px;width: 105px;height: 80px" id="3">3</div>
+          <div class="box" style="position: absolute;top: 10px;left: 365px;width: 100px; height:80px" id="4">4</div>
+          <div class="box" style="position: absolute;top: 10px;left: 475px;width: 120px; height:80px" id="5">5</div>
+        </div>
+        <div class="row-2">
+          <div class="box" style="position: absolute;top: 110px;left: 5px;width: 115px;height: 90px" id="3" >1</div>
+          <div class="box" style="position: absolute;top: 110px;left: 130px;width: 75px;height: 90px"id="5">2</div>
+          <div class="box" style="position: absolute;top: 110px;left: 215px;width: 100px;height: 90px" id="4" >3</div>
+          <div class="box" style="position: absolute;top: 110px;left: 325px;width: 165px;height: 90px"id="2" >4</div>
+          <div class="box" style="position: absolute;top: 110px;left: 500px;width: 95px;height: 90px"id="1" >5</div>
+        </div>
     </div>
-    <div class="row-2">
-      <div class="box" style="position: absolute;top: 110px;left: 5px;width: 115px;height: 90px" id="3" >1</div>
-      <div class="box" style="position: absolute;top: 110px;left: 130px;width: 75px;height: 90px"id="5">2</div>
-      <div class="box" style="position: absolute;top: 110px;left: 215px;width: 100px;height: 90px" id="4" >3</div>
-      <div class="box" style="position: absolute;top: 110px;left: 325px;width: 165px;height: 90px"id="2" >4</div>
-      <div class="box" style="position: absolute;top: 110px;left: 500px;width: 95px;height: 90px"id="1" >5</div>
-    </div>
+    <div id="Hint" style="position: absolute; top: 250px; left: 20px; font-size : 18px; color: red"></div>
   </div>
-  <!-- <script>
-    $(document).ready(function(){
-      $("#1").trigger("click");
-      $(".row-2").find("#1").trigger("click");
-    });
-  </script> -->
-
+  <div id="viewPortNarrowThreshold"></div >
 </body>
 
 </html>
