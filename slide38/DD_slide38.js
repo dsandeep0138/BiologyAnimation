@@ -60,7 +60,7 @@ $(document).ready(function () {
     $( "#submit" ).click(function() {
 		var correct =0;
         $('.question').each(function() {
-            if($(this).attr("ans") == $(this).text()){
+            if($(this).attr("ans") == $(this).attr('qid')){
                 correct=correct+1;
 			    if($.inArray($(this).text(), answered) < 0)
 				    answered.push($(this).text())
