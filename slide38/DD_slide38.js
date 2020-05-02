@@ -29,6 +29,7 @@ $(document).ready(function () {
                     console.log("plz")
                     $(this).css('background', 'cyan');
                     $(this).attr("ans", "");
+                    $(this).text($(this).attr('qid'));
                 }
             }
         },
@@ -39,6 +40,7 @@ $(document).ready(function () {
                 }
                 $(this).css('background', 'orange');
                 $(this).attr("ans",ui.draggable.attr('id'));
+                $(this).text("");
                 //console.log(ui.draggable);
             }
             else {
@@ -52,6 +54,7 @@ $(document).ready(function () {
             moveBack($(this).attr("ans"));
             $(this).css('background', 'cyan');
             $(this).attr("ans", 0);
+            $(this).text($(this).attr('qid'));
         }
     });
     $( "#submit" ).click(function() {
