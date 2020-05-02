@@ -22,7 +22,7 @@ $(document).ready(function () {
             }else{
                 $con.removeClass("has-answer");
             }
-        }else if($con.hasClass("answer-container")){
+        }else if($con.hasClass("word-bank")){
         }
     }
     $(".answer").draggable({
@@ -32,8 +32,9 @@ $(document).ready(function () {
                 $q = $(this);
                 $q.css("top", "");
                 $q.css("left", "");
-            }
-    });
+            },
+            zIndex: 1
+        });
     $(".question").droppable({
         accept: ".answer",
         tolerance: "pointer",
@@ -45,7 +46,7 @@ $(document).ready(function () {
             var $q = $(this);
             $ans = ui.draggable;
             if($q.hasClass("has-answer")){
-                move_to($q.children(), $(".answer-container"));
+                move_to($q.children(), $(".word-bank"));
             }
             move_to($ans, $q);
         }
@@ -53,48 +54,40 @@ $(document).ready(function () {
     $(".question").dblclick(function(){
         $q = $(this)
         if($q.hasClass("has-answer")){
-            move_to($q.children(), $(".answer-container"));
+            move_to($q.children(), $(".word-bank"));
         }
     });
-    /*
     $( "#submit" ).click(function() {
-        var correct =0;
+        var num_wrong =0;
         $('.question').each(function() {
             $q = $(this);
-            if("a" + $q.attr("id") == $q.children().attr("id")){
-                correct=correct+1;
+            if(  $q.attr("id") == $q.children().attr("id")){
                 $q.css('background', 'green');
                 $q.children().draggable('disable');
                 $q.droppable('disable');
                 $q.off('dblclick');
             }else{
-                $('#hint').text('Hint: Go back and look at Cell Theory Slides');
-                $('#hint').css('font', '12px');
+                num_wrong += 1;
             }
         });
-       alert( "You got " + correct +" answers correct.\n");
-    }); 
-    */
-   $( "#submit" ).click(function() {
-        var correct =0;
-        $('.question').each(function() {
-            $q = $(this);
-            if( $q.attr("id") == $q.children().attr("id")){
 
-                $('#hint').text('Hint: Go back and look at Cell Theory Slides');
-                $('#hint').css('font', '12px');
-
-            }else{
-                correct=correct+1;
-                $q.css('background', 'green');
-                $q.children().draggable('disable');
-                $q.droppable('disable');
-            }
-        });
-        alert( "You got " + correct +" answers correct.\n");
+        var $hint_content = $('.hint-content');
+        if(num_wrong == 0){
+            $hint_content.text('' );
+            $hint_content.append('<p>You got them all right!</p>' );
+        }else{
+            $hint_content.text('' );
+            $hint_content.append('<p>You got ' + num_wrong +' answers wrong.</p>' );
+            $hint_content.append('<p>Hint: Go back and read Cell Theory Slides.</p>' );
+        }
+        $('.hint').css('visibility', 'visible');
     });
 
     $('.question').each(function(){
         update($(this));
+    });
+
+    $('.hint').click(function(){
+        $(this).css("visibility", "hidden");
     });
 });
