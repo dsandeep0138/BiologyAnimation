@@ -92,5 +92,21 @@ describe("Select two images", function() {
       }, 2000)
   })
 // })
+
+  it('recall the wrong matching', function(){
+    var img_id = 2;
+    var image_1 = top_row.find(`#${img_id}`);
+    var image_2 = bot_row.find(`#${img_id+1}`);
+    var image_3 = bot_row.find('#5')
+    
+    $(image_1).trigger("click");
+    expect(image_1.css("border-color")).eq("rgb(255, 255, 0)");
+    expect(image_2.css("border-color")).eq("rgb(255, 0, 0)");
+    
+    $(image_3).trigger("click");
+    expect(image_1.css("border-color")).eq("rgb(255, 0, 0)");
+    expect(image_2.css("border-color")).eq("rgb(0, 0, 0)");
+    expect(image_3.css("border-color")).eq("rgb(255, 0, 0)");
+  })
   
 })
