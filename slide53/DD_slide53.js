@@ -78,7 +78,7 @@ $(document).ready(function () {
         }else{
             $hint_content.text('' );
             $hint_content.append('<p>You got ' + num_wrong +' answers wrong.</p>' );
-            $hint_content.append('<p>Hint: Go back and read Cell Theory Slides.</p>' );
+            $hint_content.append('<p>Hint: Go back and study the diagram in the section Organisms.</p>' );
         }
         $('.hint').css('visibility', 'visible');
     });
