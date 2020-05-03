@@ -13,20 +13,20 @@
                font-family: sans-serif, arial, helvetica;
                background-image: url('slide_14.png');
                background-repeat: no-repeat;
-               background-size: 60% 80%;
+               background-size: 60% ;
                image.style.width = '100%'
                image.style.height = 'auto'
-			   
+
             }
             .box {
-            	width: 33%;
+            	width: 34%;
                 height: 50px;
-                
+
                 border: solid 1px;
-                
+
             }
             button {
- 
+
   background-color: #008CBA; /* Green */
   border: none;
   color: white;
@@ -36,10 +36,10 @@
   display: inline-block;
   font-size: 18px;
 }
-            
+
             #a {
-                
-                background-color: #008CBA; 
+
+                background-color: #008CBA;
   border: none;
   color: white;
   padding: 10px 22px;
@@ -47,15 +47,15 @@
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-                
+
             }
-            
+
             .container {
                border: 1px solid #DDDDDD;
                width: 95%;
                height: 100%;
             }
-			
+
 			p {
   display: block;
   margin-top: 1em;
@@ -66,7 +66,17 @@
   color: green;
   margin-left:45em
 }
-    
+
+div.absolute {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid #73AD21;
+}
+</style>
+
   </style>
 
 
@@ -77,33 +87,32 @@
 
 
  <div >
-        
-        
+
+
         <div class= "box" id="a">Organelle Defination</div>
-        
-        
+
+
     </div>
 
-     <div class="container">
-       <img src="slide_14.png" width="60%" height="auto">
-    </div>
+
 
 
 
     <script type="text/javascript">
-    	
+
   		$( "#a" ).click(function() {
   		$( "#a" ).remove();});
 
-		$("#a").css({top: 550, left: 900, position:'absolute'});
-      
+		$("#a").css({top: 510, left: 900, position:'absolute'});
+
 		$(document).ready(function(){
 		  $("#a").click(function(){
 		     $("p").show();
 		  });
 		});
     </script>
-<p>These membrane bound structures are called organelles</p>
+<p></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>These membrane bound structures are called organelles</p>
+
 
 
 </body>
