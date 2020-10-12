@@ -4,6 +4,7 @@ window.onload = function() {
 
 $(function(){
     jQuery("#imageListItems").sortable({
+        tolerance: "pointer",
         update: function(event, ui) {
 	    updateBorderToDefault();
 	}
@@ -41,11 +42,11 @@ function compareArr(arr1, arr2) {
 
     for (var i = 0; i < arr1.length; i++) {
         if (arr1[i] != arr2[i]) {
-	    incorrect_answer = true;
+            incorrect_answer = true;
             $(".imageList").eq(i).css("border", "3px solid red");
-	} else {
+        } else {
             $(".imageList").eq(i).css("border", "3px solid lime");
-	}
+        }
     }
 
     if (incorrect_answer) {
