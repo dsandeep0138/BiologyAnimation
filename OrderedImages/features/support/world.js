@@ -1,43 +1,27 @@
-// features/support/world.js
-const { setWorldConstructor } = require("cucumber");
+const { setWorldConstructor, AfterAll } = require("cucumber");
 const { Builder, By, Key, until } = require("selenium-webdriver");
 const chromedriver = require("chromedriver");
+const driver = new Builder().forBrowser("chrome").build();
 
 class browserBuild {
   constructor() {}
 
-  async init() {
-    // const driver = await new Builder().forBrowser("chrome").build();
-    // await driver.manage().window().maximize();
-    // await driver.get(`file:///${__dirname}/../../index.html`);
-    // this.driver = driver;
-
-  }
-
-  async imageOrder(correctness) {
-    const driver = await new Builder().forBrowser("chrome").build();
+  async init(correctness) {
     await driver.manage().window().maximize();
 
     if (correctness) {
       await driver.get(`file:///${__dirname}/../../index1.html`);
-      const images = await driver.findElement(By.id("original_items"));
-      const individuals = await images.findElements(By.tagName("li"));
-      individuals[0].getAttribute("id") == "first";
-      individuals[1].getAttribute("id") == "second";
-      individuals[2].getAttribute("id") == "third";
-      individuals[3].getAttribute("id") == "fourth";
-      individuals[4].getAttribute("id") == "fifth";
     } else {
       await driver.get(`file:///${__dirname}/../../index.html`);
-      const images = await driver.findElement(By.id("original_items"));
-      const individuals = await images.findElements(By.tagName("li"));
-      individuals[0].getAttribute("id") != "first";
-      individuals[1].getAttribute("id") != "second";
-      individuals[2].getAttribute("id") != "third";
-      individuals[3].getAttribute("id") != "fourth";
-      individuals[4].getAttribute("id") != "fifth";
     }
+
     this.driver = driver;
+  }
+
+  async imageOrder() {
+    const images = await this.driver.findElement(By.id("imageListItems"));
+    const individuals = await images.findElements(By.tagName("li"));
+    await this.driver.findElement(By.id("checkAnswer")).click();
   }
 
   async getResultPhrase() {
@@ -46,5 +30,9 @@ class browserBuild {
     return elem.getText();
   }
 }
+
+AfterAll(async() => {
+  await driver.quit();
+});
 
 setWorldConstructor(browserBuild);

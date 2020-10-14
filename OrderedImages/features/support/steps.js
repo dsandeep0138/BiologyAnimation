@@ -1,17 +1,10 @@
-const {Given, When, Then, After } = require("cucumber");
+const { Given, When, Then } = require("cucumber");
 const { expect } = require("chai");
-
 const { sleep } = require("./util");
 
-// After(async function () {
-//   return this.driver.quit();
-// });
-
-When("Images are placed in {string} order", async function (
-  correctness
-) {
-  await this.init();
-  await this.imageOrder(correctness === "correct");
+When("Images are placed in {string} order", {timeout: 2 * 5000}, async function (correctness) {
+  await this.init(correctness === "correct");
+  await this.imageOrder();
 });
   
 Then("I should see {string}", async function (phrase) {
