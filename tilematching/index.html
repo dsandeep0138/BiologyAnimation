@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+	    padding: 0;
+	    margin: 0;
+	}
+
+        body {
+	    display: flex;
+	    flex-direction: column;
+	    padding-top: 2%;
+	    background-color: black;
+        }
+
+	#container {
+            width: 600px;
+	    height: 300px;
+	    margin: 10px auto;
+        }
+
+	#output-text {
+	    color: lime;
+	    text-align: center;
+	}
+
+	ul {
+	    display: flex;
+	    flex-wrap: wrap;
+            list-style: none;
+	}
+
+	li {
+            width: 145px;
+            height: 145px;
+            border: 1px solid black;
+            text-align: center;
+	    margin: 2px auto;
+	    padding: 50px;
+            font-size: 30px;
+	    background: #E4FDE1;
+	    box-sizing: border-box;
+	}
+
+	img {
+	    width: 100%;
+            height: 100%;
+	}
+
+	h1 {
+	    margin-top: 5%;
+            color: white;
+	    text-align: center;
+	}
+
+	#clicked {
+            border: 3px solid black;
+	}
+
+	#removed {
+            border: 0px;
+	    background: black;
+	}
+
+	#unclicked {
+            border: 1px solid black;
+	}
+
+	#incorrect {
+            border: 3px solid red;
+	}
+
+	#correct {
+            border: 3px solid lime;
+	}
+    </style>
+</head>
+<body>
+    <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
+    <script src="js/tilematching.js"></script>
+    <h1>Match tiles!</h1>
+    <div id="container">
+        <ul id="puzzle-grid">
+	    <li class="set1">1</li>
+            <li class="set4">7</li>
+	    <li class="set4">8</li>
+            <li class="set3">5</li>
+	    <li class="set3">6</li>
+            <li class="set1">2</li>
+	    <li class="set2">3</li>
+            <li class="set2">4</li>
+        </ul>
+    </div>
+    <p id="output-text"></p>
+</body>
+</html>
