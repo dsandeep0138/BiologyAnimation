@@ -62,12 +62,13 @@ $(document).ready(function () {
         $('.question').each(function() {
             $q = $(this);
             if(  $q.attr("id") == $q.children().attr("id")){
-                $q.css('background', 'green');
+                $q.css('background', '#94FFBE');
                 $q.children().draggable('disable');
                 $q.droppable('disable');
                 $q.off('dblclick');
             }else{
                 num_wrong += 1;
+                $q.css('background', '#BB2525');
             }
         });
 

@@ -8,15 +8,13 @@ $(document).ready(function () {
         revert: "invalid",
         revertDuration: 0,
         start:function(ev, ui){
-            //console.log($(this).text());
-        }
+                   }
     });
     $(".question").droppable({
         out: function(event, ui) {
 			if($.inArray($(this).text(), answered) < 0) {
                 if($(this).attr("ans") == ui.draggable.attr('id')) {
-                    console.log("plz")
-                    $(this).css('background', 'cyan');
+                                    $(this).css('background', '#34A0FF');
                     $(this).attr("ans", "");
                     $(this).text($(this).attr('qid'));
                 }
@@ -27,11 +25,10 @@ $(document).ready(function () {
                 if ($(this).attr("ans") != ui.draggable.attr('id')) {
                     moveBack($(this).attr("ans"));
                 }
-                $(this).css('background', 'orange');
+                $(this).css('background', '#FFC707');
                 $(this).attr("ans",ui.draggable.attr('id'));
                 $(this).text("");
-                //console.log(ui.draggable);
-            }
+                            }
             else {
                 moveBack(ui.draggable.attr('id'));
             }
@@ -41,7 +38,7 @@ $(document).ready(function () {
         console.log($(this));
         if($.inArray($(this).attr("ans"), answered) < 0) {
             moveBack($(this).attr("ans"));
-            $(this).css('background', 'cyan');
+            $(this).css('background', '#34A0FF');
             $(this).attr("ans", 0);
             $(this).text($(this).attr('qid'));
         }
@@ -53,13 +50,12 @@ $(document).ready(function () {
                 correct=correct+1;
 			    if($.inArray($(this).text(), answered) < 0)
 				    answered.push($(this).text())
-                $(this).css('background', 'green');
+                $(this).css('background', '#94FFBE');
 				$('#'+$(this).attr("ans")).draggable('disable');
             }else{
-                //$('#hint').text('Hint: Go back and study the diagram in the section Organisms');
-                //$('#hint').css('font', '12px');
+                
                 if($(this).attr("ans")) {
-                    $(this).css('background', 'red');
+                    $(this).css('background', '#BB2525');
                     moveBack($(this).attr("ans"));
                 }
             }
