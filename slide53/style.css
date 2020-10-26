@@ -57,7 +57,7 @@ div.submit-container{
 .question{
     position: absolute;
     border: 2px solid black;
-    background: cyan;
+    background: #34A0FF;
     text-align: center;
 }
 
@@ -73,14 +73,14 @@ div.submit-container{
     text-align: center;
 }
 .question.answer-hover{
-    background: orange;
+    background: #FFC707;
 }
 
 .question.has-answer.answer-hover{
-    background: orange;
+    background: #FFC707;
 }
 .question.has-answer{
-    background: gray;
+    background: white;
 }
 .question > .answer{
     margin: 0px;
