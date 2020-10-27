@@ -8,28 +8,27 @@ $(document).ready(function () {
         revert: "invalid",
         revertDuration: 0,
         start:function(ev, ui){
-                   }
+        }
     });
     $(".question").droppable({
         out: function(event, ui) {
 			if($.inArray($(this).text(), answered) < 0) {
                 if($(this).attr("ans") == ui.draggable.attr('id')) {
-                                    $(this).css('background', '#34A0FF');
+                    $(this).css('background', '#34A0FF');
                     $(this).attr("ans", "");
                     $(this).text($(this).attr('qid'));
                 }
             }
         },
         drop: function(event, ui) {
-			if($.inArray($(this).text(), answered) < 0) {
+            if($.inArray($(this).text(), answered) < 0) {
                 if ($(this).attr("ans") != ui.draggable.attr('id')) {
                     moveBack($(this).attr("ans"));
                 }
                 $(this).css('background', '#FFC707');
                 $(this).attr("ans",ui.draggable.attr('id'));
                 $(this).text("");
-                            }
-            else {
+            } else {
                 moveBack(ui.draggable.attr('id'));
             }
         }
@@ -44,7 +43,7 @@ $(document).ready(function () {
         }
     });
     $( "#submit" ).click(function() {
-		var correct =0;
+        var correct =0;
         $('.question').each(function() {
             if($(this).attr("ans") == $(this).attr('qid')){
                 correct=correct+1;
@@ -52,7 +51,7 @@ $(document).ready(function () {
 				    answered.push($(this).text())
                 $(this).css('background', '#94FFBE');
 				$('#'+$(this).attr("ans")).draggable('disable');
-            }else{
+            } else{
                 
                 if($(this).attr("ans")) {
                     $(this).css('background', '#BB2525');
@@ -60,6 +59,7 @@ $(document).ready(function () {
                 }
             }
         });
+
         if (correct == 11)
             alert( "You got " + correct +" answers correct.\n");
         else
