@@ -37,15 +37,16 @@
             border: 1px solid black;
             text-align: center;
 	    margin: 2px auto;
-	    padding: 50px;
-            font-size: 30px;
+	    padding: 2px;
+            font-size: 20px;
 	    background: #E4FDE1;
 	    box-sizing: border-box;
 	}
 
 	img {
-	    width: 100%;
-            height: 100%;
+            width: 140px;
+            height: 140px;
+	    box-sizing: border-box;
 	}
 
 	h1 {
@@ -74,6 +75,10 @@
 	#correct {
             border: 3px solid lime;
 	}
+
+	.set-text {
+	    margin-top: 60px;
+	}
     </style>
 </head>
 <body>
@@ -82,14 +87,14 @@
     <h1>Match tiles!</h1>
     <div id="container">
         <ul id="puzzle-grid">
-	    <li class="set1">1</li>
-            <li class="set4">7</li>
-	    <li class="set4">8</li>
-            <li class="set3">5</li>
-	    <li class="set3">6</li>
-            <li class="set1">2</li>
-	    <li class="set2">3</li>
-            <li class="set2">4</li>
+	    <li class="set1"><img src="kidney.png"></li>
+	    <li class="set4"><img src="pancreas.png"></li>
+	    <li class="set4"><p class="set-text">Pancreas</p></li>
+	    <li class="set3"><img src="thymus.png"></li>
+	    <li class="set3"><p class="set-text">Thymus</p></li>
+	    <li class="set1"><p class="set-text">Kidney</p></li>
+	    <li class="set2"><p class="set-text">Thyroid</p></li>
+	    <li class="set2"><img src="thyroid.png"></li>
         </ul>
     </div>
     <p id="output-text"></p>
