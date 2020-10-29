@@ -33,6 +33,11 @@ window.onload = function() {
 
         if (checkAnswer()) {
             outputText.innerHTML = "You've done it!";
+
+            for (i = 0; i < numChildren; i++) {
+                grid.children[i].className = "opaque";
+            }
+
             return;
         }
 
@@ -61,6 +66,11 @@ window.onload = function() {
 
     if (checkAnswer()) {
         outputText.innerHTML = "You've done it!";
+
+        for (i = 0; i < numChildren; i++) {
+            grid.children[i].className = "opaque";
+        }
+
         return;
     }
 
