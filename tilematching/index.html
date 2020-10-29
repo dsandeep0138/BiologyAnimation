@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+	    padding: 0;
+	    margin: 0;
+	}
+
+        body {
+	    display: flex;
+	    flex-direction: column;
+	    padding-top: 2%;
+	    background-color: black;
+        }
+
+	#container {
+            width: 600px;
+	    height: 300px;
+	    margin: 10px auto;
+        }
+
+	#output-text {
+	    color: white;
+	    margin: 10px auto;
+	    font-size: 40px;
+	    font-weight: bold;
+            width: 600px;
+	    text-align: center;
+	}
+
+	ul {
+	    display: flex;
+	    flex-wrap: wrap;
+            list-style: none;
+	}
+
+	li {
+            width: 145px;
+            height: 145px;
+            border: 1px solid black;
+            text-align: center;
+	    margin: 2px auto;
+	    padding: 2px;
+            font-size: 20px;
+	    background: #E4FDE1;
+	    box-sizing: border-box;
+	}
+
+	img {
+            width: 140px;
+            height: 140px;
+	    box-sizing: border-box;
+	}
+
+	h1 {
+	    margin-top: 5%;
+            color: white;
+	    text-align: center;
+	}
+
+	#clicked {
+            border: 3px solid black;
+	}
+
+	#removed {
+            border: 0px;
+	    background: black;
+	}
+
+	#unclicked {
+            border: 1px solid black;
+	}
+
+	#incorrect {
+            border: 3px solid red;
+	}
+
+	#correct {
+            border: 3px solid lime;
+	}
+
+	.set-text {
+	    margin-top: 60px;
+	}
+    </style>
+</head>
+<body>
+    <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
+    <script src="js/tilematching.js"></script>
+    <h1>Match tiles!</h1>
+    <div id="container">
+        <ul id="puzzle-grid">
+	    <li class="set1"><img src="kidney.png"></li>
+	    <li class="set4"><img src="pancreas.png"></li>
+	    <li class="set4"><p class="set-text">Pancreas</p></li>
+	    <li class="set3"><img src="thymus.png"></li>
+	    <li class="set3"><p class="set-text">Thymus</p></li>
+	    <li class="set1"><p class="set-text">Kidney</p></li>
+	    <li class="set2"><p class="set-text">Thyroid</p></li>
+	    <li class="set2"><img src="thyroid.png"></li>
+        </ul>
+    </div>
+    <p id="output-text"></p>
+</body>
+</html>
