@@ -73,6 +73,30 @@
             border: 5px solid yellow;
         }
 
+        #clicked .flip-tile-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-tile-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-tile-front, .flip-tile-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .flip-tile-back {
+            transform: rotateY(180deg);
+        }
+
         #removed {
             border: 0px;
             background: black;
@@ -86,8 +110,16 @@
             border: 5px solid red;
         }
 
+        #incorrect .flip-tile-inner {
+            transform: rotateY(180deg);
+        }
+
         #correct {
             border: 5px solid lime;
+        }
+
+        #correct .flip-tile-inner {
+            transform: rotateY(180deg);
         }
 
         .set-text {
@@ -101,18 +133,90 @@
     <h1>Match related tiles!</h1>
     <div id="container">
         <ul id="puzzle-grid">
-	    <li class="set1"><img src="img/kidney.png"></li>
-	    <li class="set4"><img src="img/pancreas.jpg"></li>
-	    <li class="set4"><p class="set-text">Pancreas</p></li>
-	    <li class="set3"><img src="img/liver.jpg"></li>
-	    <li class="set3"><p class="set-text">Liver</p></li>
-	    <li class="set1"><p class="set-text">Kidney</p></li>
-	    <li class="set2"><p class="set-text">Lungs</p></li>
-	    <li class="set2"><img src="img/lungs.jpg"></li>
+	    <li class="set1">
+                <div class="flip-tile-inner">
+                    <div class="flip-tile-front">
+		        <p class="set-text">Cell Biology</p>
+                    </div>
+                    <div class="flip-tile-back">
+                        <img src="img/kidney.png">
+                    </div>
+                </div>
+	    </li>
+	    <li class="set4">
+                <div class="flip-tile-inner">
+                    <div class="flip-tile-front">
+		        <p class="set-text">Cell Biology</p>
+                    </div>
+                    <div class="flip-tile-back">
+                        <img src="img/pancreas.jpg">
+                    </div>
+                </div>
+	    </li>
+	    <li class="set4">
+                <div class="flip-tile-inner">
+                    <div class="flip-tile-front">
+		        <p class="set-text">Cell Biology</p>
+                    </div>
+                    <div class="flip-tile-back">
+	                <p class="set-text">Pancreas</p>
+                    </div>
+                </div>
+	    </li>
+	    <li class="set3">
+                <div class="flip-tile-inner">
+                    <div class="flip-tile-front">
+		        <p class="set-text">Cell Biology</p>
+                    </div>
+                    <div class="flip-tile-back">
+                        <img src="img/liver.jpg">
+                    </div>
+                </div>
+	    </li>
+	    <li class="set3">
+                <div class="flip-tile-inner">
+                    <div class="flip-tile-front">
+		        <p class="set-text">Cell Biology</p>
+                    </div>
+                    <div class="flip-tile-back">
+	                <p class="set-text">Liver</p>
+                    </div>
+                </div>
+	    </li>
+	    <li class="set1">
+                <div class="flip-tile-inner">
+                    <div class="flip-tile-front">
+		        <p class="set-text">Cell Biology</p>
+                    </div>
+                    <div class="flip-tile-back">
+	                <p class="set-text">Kidney</p>
+                    </div>
+                </div>
+	    </li>
+	    <li class="set2">
+                <div class="flip-tile-inner">
+                    <div class="flip-tile-front">
+		        <p class="set-text">Cell Biology</p>
+                    </div>
+                    <div class="flip-tile-back">
+	                <p class="set-text">Lungs</p>
+                    </div>
+                </div>
+	    </li>
+	    <li class="set2">
+                <div class="flip-tile-inner">
+                    <div class="flip-tile-front">
+		        <p class="set-text">Cell Biology</p>
+                    </div>
+                    <div class="flip-tile-back">
+                        <img src="img/lungs.jpg">
+                    </div>
+                </div>
+	    </li>
         </ul>
     </div>
     <p id="output-text"></p>
     <h3 class="instructions">INSTRUCTIONS</h3>
-    <p class="instructions">Click on a tile and it's related tile to make them disappear. Make all the tiles disappear to complete the game.</p>
+    <p class="instructions">Click on a tile to reveal it's content. There are a total of 4 pairs of related tiles. Remember where a tile and it's related tile are located. Clicking on a tile and it's related tile will make them disappear. Make all the tiles disappear to complete the game.</p>
 </body>
 </html>
