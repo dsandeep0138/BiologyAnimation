@@ -67,6 +67,18 @@
             color: white;
             margin: 5px auto;
             width: 600px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        @media screen and (max-width: 480px) {
+            h1, #container, #output-text, .instructions {
+                width: 300px;
+            }
+
+	    #container {
+                height: 600px;
+	    }
         }
 
         #clicked {
@@ -133,6 +145,7 @@
 </head>
 <body>
     <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <script src="js/tilematching.js"></script>
     <h1>Match related tiles!</h1>
     <div id="container">
@@ -221,6 +234,6 @@
     </div>
     <p id="output-text"></p>
     <h3 class="instructions">INSTRUCTIONS</h3>
-    <p class="instructions">Click on a tile to reveal it's content. There are a total of 4 pairs of related tiles. Remember where a tile and it's related tile are located. Clicking on a tile and it's related tile will make them disappear. Make all the tiles disappear to complete the game.</p>
+    <p class="instructions">Click a tile to turn it over and reveal it's content, then find the related tile. Clicking on a tile and it's related tile will make them disappear. Make all the tiles disappear to complete the game.</p>
 </body>
 </html>

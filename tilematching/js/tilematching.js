@@ -1,6 +1,7 @@
-window.onload = function() {
+$(window).load(function() {
     var grid = document.getElementById("puzzle-grid");
     var numChildren = grid.childElementCount;
+    var clickSound = new Audio('assets/click.mp3');
 
     // randomize the list
     for (i = numChildren; i >= 0; i--) {
@@ -34,6 +35,9 @@ window.onload = function() {
     }
 
     function matchTile() {
+        clickSound.play();
+        clickSound.currentTime = 0;
+
         if (clickedTiles.length === 0) {
             clickedTiles.push(this);
 
@@ -115,4 +119,4 @@ window.onload = function() {
             }
         }
     }
-}
+});
