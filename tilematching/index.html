@@ -38,20 +38,21 @@
         }
 
         li {
-            width: 145px;
-            height: 145px;
+            width: 140px;
+            height: 140px;
             border: 1px solid black;
             text-align: center;
-            margin: 2px auto;
-            padding: 2px;
+            margin: 5px auto;
+            cursor: pointer;
             font-size: 20px;
-            background: #E4FDE1;
+            background: #02CCBA;
+            border-radius: 8px;
             box-sizing: border-box;
         }
 
         img {
-            width: 131px;
-            height: 133px;
+            width: 130px;
+            height: 130px;
             box-sizing: border-box;
         }
 
@@ -83,6 +84,7 @@
 
         #clicked {
             border: 5px solid yellow;
+            cursor: default;
         }
 
         #clicked .flip-tile-inner {
@@ -114,8 +116,7 @@
         }
 
         #removed {
-            border: 0px;
-            background: black;
+            visibility: hidden;
         }
 
         #unclicked {
@@ -124,6 +125,7 @@
 
         #incorrect {
             border: 5px solid red;
+            cursor: default;
         }
 
         #incorrect .flip-tile-inner {
@@ -132,6 +134,7 @@
 
         #correct {
             border: 5px solid lime;
+            cursor: default;
         }
 
         #correct .flip-tile-inner {
@@ -145,7 +148,6 @@
 </head>
 <body>
     <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <script src="js/tilematching.js"></script>
     <h1>Match related tiles!</h1>
     <div id="container">

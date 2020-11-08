@@ -1,4 +1,4 @@
-$(window).load(function() {
+window.onload = function() {
     var grid = document.getElementById("puzzle-grid");
     var numChildren = grid.childElementCount;
     var clickSound = new Audio('assets/click.mp3');
@@ -8,21 +8,12 @@ $(window).load(function() {
         grid.appendChild(grid.children[Math.random() * i | 0]);
     }
 
-    var set1 = document.querySelectorAll(".set1 .flip-tile-back");
-    var set2 = document.querySelectorAll(".set2 .flip-tile-back");
-    var set3 = document.querySelectorAll(".set3 .flip-tile-back");
-    var set4 = document.querySelectorAll(".set4 .flip-tile-back");
+    var setNumbers = [];
+    for (i = 0; i < numChildren; i++) {
+        setNumbers.push(grid.children[i].className);
+    }
 
-    // clone the nodes, needed to display the correct matches
-    set11 = set1[0].firstElementChild.cloneNode(true);
-    set12 = set1[1].firstElementChild.cloneNode(true);
-    set21 = set2[0].firstElementChild.cloneNode(true);
-    set22 = set2[1].firstElementChild.cloneNode(true);
-    set31 = set3[0].firstElementChild.cloneNode(true);
-    set32 = set3[1].firstElementChild.cloneNode(true);
-    set41 = set4[0].firstElementChild.cloneNode(true);
-    set42 = set4[1].firstElementChild.cloneNode(true);
-
+    var set = document.querySelectorAll(".flip-tile-back");
     var outputText = document.getElementById("output-text");
     var clickedTiles = [];
 
@@ -71,37 +62,21 @@ $(window).load(function() {
                     if (count == 8) {
                         grid.innerHTML = "";
 
-                        var node = document.createElement("li");
-                        node.appendChild(set11);
-                        grid.appendChild(node);
+                        for (i = 0; i < numChildren; i++) {
+                            var node = document.createElement("li");
+                            node.appendChild(set[i].firstElementChild.cloneNode(true));
+                            grid.appendChild(node);
 
-                        node = document.createElement("li");
-                        node.appendChild(set21);
-                        grid.appendChild(node);
-
-                        node = document.createElement("li");
-                        node.appendChild(set31);
-                        grid.appendChild(node);
-
-                        node = document.createElement("li");
-                        node.appendChild(set41);
-                        grid.appendChild(node);
-
-                        node = document.createElement("li");
-                        node.appendChild(set12);
-                        grid.appendChild(node);
-
-                        node = document.createElement("li");
-                        node.appendChild(set22);
-                        grid.appendChild(node);
-
-                        node = document.createElement("li");
-                        node.appendChild(set32);
-                        grid.appendChild(node);
-
-                        node = document.createElement("li");
-                        node.appendChild(set42);
-                        grid.appendChild(node);
+                            if (setNumbers[i] === "set1") {
+                                grid.children[i].style.border = "5px solid lime";
+                            } else if (setNumbers[i] === "set2") {
+                                grid.children[i].style.border = "5px solid blue";
+                            } else if (setNumbers[i] === "set3") {
+                                grid.children[i].style.border = "5px solid red";
+                            } else if (setNumbers[i] === "set4") {
+                                grid.children[i].style.border = "5px solid pink";
+                            }
+                        }
 
                         outputText.innerHTML = "All tiles are matched!";
 		    }
@@ -119,4 +94,4 @@ $(window).load(function() {
             }
         }
     }
-});
+}
