@@ -1,26 +1,19 @@
 window.onload = function() {
     var grid = document.getElementById("puzzle-grid");
     var numChildren = grid.childElementCount;
+    var clickSound = new Audio('assets/click.mp3');
 
     // randomize the list
     for (i = numChildren; i >= 0; i--) {
         grid.appendChild(grid.children[Math.random() * i | 0]);
     }
 
-    var set1 = document.getElementsByClassName("set1");
-    var set2 = document.getElementsByClassName("set2");
-    var set3 = document.getElementsByClassName("set3");
-    var set4 = document.getElementsByClassName("set4");
+    var setNumbers = [];
+    for (i = 0; i < numChildren; i++) {
+        setNumbers.push(grid.children[i].className);
+    }
 
-    set11 = set1[0].cloneNode(true); 
-    set12 = set1[1].cloneNode(true); 
-    set21 = set2[0].cloneNode(true); 
-    set22 = set2[1].cloneNode(true); 
-    set31 = set3[0].cloneNode(true); 
-    set32 = set3[1].cloneNode(true); 
-    set41 = set4[0].cloneNode(true); 
-    set42 = set4[1].cloneNode(true); 
-
+    var set = document.querySelectorAll(".flip-tile-back");
     var outputText = document.getElementById("output-text");
     var clickedTiles = [];
 
@@ -33,57 +26,72 @@ window.onload = function() {
     }
 
     function matchTile() {
+        clickSound.play();
+        clickSound.currentTime = 0;
+
         if (clickedTiles.length === 0) {
-	    clickedTiles.push(this);
-	    this.id = "clicked";
+            clickedTiles.push(this);
+
+            // remove click listener to avoid clicking on the same tile
+            this.removeEventListener("click", matchTile);
+            this.id = "clicked";
         } else {
-	    var previousTile = clickedTiles.pop();
+            var previousTile = clickedTiles.pop();
             var currentTile = this;
 
-	    if (previousTile.className == currentTile.className) {
+            if (previousTile.className == currentTile.className) {
                 previousTile.id = "correct";
-		currentTile.id = "correct";
+                currentTile.id = "correct";
 
-		sleep(1000, function() {
-		    var tiles = document.getElementsByClassName(currentTile.className);
+                sleep(1000, function() {
+                    var tiles = document.getElementsByClassName(currentTile.className);
 		
-		    for (i = 0; i < tiles.length; i++) {
+                    for (i = 0; i < tiles.length; i++) {
                         tiles[i].innerHTML = "";
-		        tiles[i].id = "removed";
+                        tiles[i].id = "removed";
                         tiles[i].removeEventListener("click", matchTile);
-		    }
+                    }
 
-		    var count = 0;
+                    var count = 0;
                     for (i = 0; i < numChildren; i++) {
                         if (grid.children[i].id == "removed") {
                             count += 1;
                         }
-		    }
+                    }
 
                     if (count == 8) {
-			grid.innerHTML = "";
+                        grid.innerHTML = "";
 
-			grid.appendChild(set11);
-			grid.appendChild(set21);
-			grid.appendChild(set31);
-			grid.appendChild(set41);
-			grid.appendChild(set12);
-			grid.appendChild(set22);
-			grid.appendChild(set32);
-			grid.appendChild(set42);
+                        for (i = 0; i < numChildren; i++) {
+                            var node = document.createElement("li");
+                            node.appendChild(set[i].firstElementChild.cloneNode(true));
+                            grid.appendChild(node);
+
+                            if (setNumbers[i] === "set1") {
+                                grid.children[i].style.border = "5px solid lime";
+                            } else if (setNumbers[i] === "set2") {
+                                grid.children[i].style.border = "5px solid blue";
+                            } else if (setNumbers[i] === "set3") {
+                                grid.children[i].style.border = "5px solid red";
+                            } else if (setNumbers[i] === "set4") {
+                                grid.children[i].style.border = "5px solid pink";
+                            }
+                        }
 
                         outputText.innerHTML = "All tiles are matched!";
 		    }
-		});
-	    } else {
+                });
+	   } else {
                 previousTile.id = "incorrect";
-		currentTile.id = "incorrect";
+                currentTile.id = "incorrect";
 
-		sleep(1000, function() {
-		    previousTile.id = "unclicked";
-		    currentTile.id = "unclicked";
-		});
-	    }
-	}
+                previousTile.addEventListener("click", matchTile);
+
+                sleep(1000, function() {
+                    previousTile.id = "unclicked";
+                    currentTile.id = "unclicked";
+                });
+            }
+        }
     }
 }
