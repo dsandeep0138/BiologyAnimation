@@ -4,22 +4,27 @@
     <title>This or That!</title>
     <style>
         body {
-            height: 800px;
+            height: 600px;
         }
 
-        p {
-            background-color: #94FFBE;
-            position : absolute;
-            top: 35%;
+        #question1, #question2, #question3 {
+            background-color: #DCDCDC;
+            position: absolute;
+            top: 25%;
             left: 20%;
             right: 20%;
+	    height: 40%;
+            border-radius: 10px;
+	}
+
+        .question {
             font-size: 20px;
             font-weight: bold;
             text-align: center;
+            padding: 2%;
         }
 
         #output-text {
-            color: black;
             z-index: 100;
             position: absolute;
             top: 20%;
@@ -29,11 +34,21 @@
             font-size: 18px;
         }
 
-        h2 {
-            background-color: #34A0FF;
+        h1 {
             position: relative; 
             top: 10%;
             width: 100%;
+            text-align: center;
+            font-family: Helvetica, Arial, sans-serif;
+            font-style: italic;
+        }
+
+	h2 {
+            padding: 2%;
+            text-align: center;
+	}
+
+        h3 {
             text-align: center;
         }
 
@@ -45,32 +60,35 @@
     </style>
 </head>
 
-<body>    
+<body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
     <script type="text/javascript" src="js/thisorthat.js"></script>
 	
-    <h2 style="">Choose This or That!</h2>
+    <h1>This or That!</h1>
     <div id="question1">
-        <p> It has no membrane-bound organelles.</p>
+        <h2>Question 3 of 3</h2>
+        <p class="question"> It has no membrane-bound organelles.</p>
 
-        <button id = "q1option1" style = "position: absolute;top: 50%;right:60%; left: 30%;width: 130px; height:50px">Prokaryotic Cell</button>
-        <button id = "q1option2" style = "position: absolute;top: 50%;right:30%; left: 60%;width: 130px; height:50px">Eukaryotic Cell</button>
+        <button id = "q1option1" style = "position: absolute;top: 60%;right:60%; left: 30%;width: 130px; height:50px">Prokaryotic Cell</button>
+        <button id = "q1option2" style = "position: absolute;top: 60%;right:30%; left: 60%;width: 130px; height:50px">Eukaryotic Cell</button>
     </div>
 
     <div id="question2">
-        <p> Animal cell and Plant cell are types of this cell.</p>
+        <h2>Question 2 of 3</h2>
+        <p class="question"> Animal cell and Plant cell are types of this cell.</p>
 
-        <button id = "q2option1" style = "position: absolute;top: 50%;right:60%; left: 30%;width: 130px; height:50px">Prokaryotic Cell</button>
-        <button id = "q2option2" style = "position: absolute;top: 50%;right:30%; left: 60%;width: 130px; height:50px">Eukaryotic Cell</button>
+        <button id = "q2option1" style = "position: absolute;top: 60%;right:60%; left: 30%;width: 130px; height:50px">Prokaryotic Cell</button>
+        <button id = "q2option2" style = "position: absolute;top: 60%;right:30%; left: 60%;width: 130px; height:50px">Eukaryotic Cell</button>
     </div>
 
     <div id ="question3">
-        <p> It often has appendages.</p>
+        <h2>Question 1 of 3</h2>
+        <p class="question"> It often has appendages.</p>
 
-        <button id = "q3option1" style = "position: absolute;top: 50%;right:60%; left: 30%;width: 130px; height:50px">Prokaryotic Cell</button>
-        <button id = "q3option2" style = "position: absolute;top: 50%;right:30%; left: 60%;width: 130px; height:50px">Eukaryotic Cell</button>
+        <button id = "q3option1" style = "position: absolute;top: 60%;right:60%; left: 30%;width: 130px; height:50px">Prokaryotic Cell</button>
+        <button id = "q3option2" style = "position: absolute;top: 60%;right:30%; left: 60%;width: 130px; height:50px">Eukaryotic Cell</button>
     </div>
     <p id="output-text"></p>
 </body>
