@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+<style>
+p {
+ background-color: #94FFBE;
+position : absolute;
+top: 30%; 
+left: 20%;
+right: 20%;
+font-size: 18px;
+
+text-align: center;
+
+
+}
+
+h2{
+
+ background-color: #34A0FF;
+position : relative; 
+top: 10%; 
+width: 100%;
+text-align: center;
+}
+
+button {
+border-radius: 8px;
+ background-color: #34A0FF;
+ font-size: 14px;
+}
+
+
+
+</style>
+</head>
+
+ <body>
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
+    
+    <h2 style=""> Choose This or That! </h2>
+ <div>
+    <p> Non-membrane bound structures which make proteins. They can either be free floating in the cytosol or they can be bound to the endoplasmic reticulum.</p>
+    
+
+        <button id = "option1" style = "position: absolute;top: 50%;right:60%; left: 30%;width: 130px; height:50px">Ribosomes</button>
+        <button id = "option2" style = "position: absolute;top: 50%;right:30%; left: 60%;width: 130px; height:50px">Mitochondria</button>
+       
+</div>
+<script>
+document.getElementById("option1").onclick = function() {myFunction(1)};
+document.getElementById("option2").onclick = function() {myFunction(2)};
+
+function myFunction(btn_id) {
+if(btn_id ==1)
+{
+
+		document.getElementById("option1").disabled = true;
+		document.getElementById("option2").disabled = true;
+alert( "That's right! ");
+}
+else
+alert( "That's wrong! Try again. \nHint: Go back and take a look at structure of cells");
+}
+
+
+</script>
+</body></html>
