@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="crossword.css">
+    <title>Title</title>
+</head>
+<body>
+<div id="crossword" class="crossword"></div>
+<div id="clues" class="crossword">
+<div id="across" class="clues1"></div>
+<div id="down" class="clues2"></div>
+<div class="buttonDiv">
+<input type="button" class= "buttonInput" value="Check Answer" onclick="checkAnswer();"></input>
+</div>
+<div id = "successdiv" class="alert hide">Well Done! You got all answers correct.</div>
+<div id = "failurediv" class="alert hide">Some of the entries were incorrect. Please try again!</div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="crossword.js"></script>
+</body>
+</html>

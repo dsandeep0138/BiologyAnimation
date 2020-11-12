@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<head>
+<style>
+.parent {
+  border: 2px solid #DFA612;
+  color: black;
+  display: flex;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.origin {
+  flex-basis: 100%;
+  flex-grow: 1;
+  padding: 5px;
+}
+
+.draggable {
+  background-color: #4AAE9B;
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.dropzone {
+  background-color: #6DB65B;
+  flex-basis: 100%;
+  flex-grow: 1;
+  padding: 5px;
+}
+</style>
+
+<head>
+    <title>Drag and drop to match words with their definitions!</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1> Drag and drop to match words with their definitions! </h1>>
+    <script src="script.js"></script>
+    <div class="parent">
+      <div class="origin">
+        <div id="d1" class="draggable" draggable="true" ondragstart="onDragStart(event);" >
+          Mitochondria
+        </div>
+        <div id="d2" class="draggable" draggable="true" ondragstart="onDragStart(event);" >
+          Cytosol
+        </div>
+        <div id="d3" class="draggable" draggable="true" ondragstart="onDragStart(event);" >
+          Cytoskeleton
+        </div>
+        <div id="d4" class="draggable" draggable="true" ondragstart="onDragStart(event);" >
+          Lysosome
+        </div>
+        <div id="d5" class="draggable" draggable="true" ondragstart="onDragStart(event);" >
+          Smooth Endoplasmic Reticulum
+        </div>
+        <div id="d6" class="draggable" draggable="true" ondragstart="onDragStart(event);" >
+          Golgi Apparatus
+        </div>
+        <div id="d7" class="draggable" draggable="true" ondragstart="onDragStart(event);" >
+          Nucleus
+        </div>
+        <div id="d8" class="draggable" draggable="true" ondragstart="onDragStart(event);" >
+          Vesicles
+        </div>
+        <div id="d9" class="draggable" draggable="true" ondragstart="onDragStart(event);" >
+          Plasma Membrane
+        </div>
+        <div id="d10" class="draggable" draggable="true" ondragstart="onDragStart(event);" >
+          Rough Endoplasmic Reticulum
+        </div>
+        <div id="d11" class="draggable" draggable="true" ondragstart="onDragStart(event);" >
+        Ribosome
+        </div>
+      </div>
+    <div class="origin">
+      <div id="d3a" class="dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+        Serves as a roadway throughout the cell
+      </div>
+      <div id="d11a" class="dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+        Makes proteins
+      </div>
+      <div id="d7a" class="dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+        Contains the genetic material in a cell
+      </div>
+      <div id="d4a" class="dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+        Breaks down cell waste
+      </div>
+      <div id="d2a" class="dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+        Gel-like fluid that fills a cell
+      </div>
+      <div id="d6a" class="dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+        Processes and modifies proteins, then packages them into vesicles for transport
+      </div>
+      <div id="d9a" class="dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+        Contains the cytoplams and regulates interaction with the environment
+      </div>
+      <div id="d8a" class="dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+        A sac-like structure for transporting materials within the cell or out of the cell
+      </div>
+      <div id="d1a" class="dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+        Converts glucose and oxygen into energy for the cell
+      </div>
+      <div id="d10a" class="dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+        Attached ribosomes, located next to the nucleus, packages proteins and sends them to other locations.
+      </div>
+      <div id="d5a" class="dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+        No attached ribosomes, processes substances like lipids.
+      </div>
+    </div> 
+</body>
+
+</html>
