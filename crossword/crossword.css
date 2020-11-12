@@ -12,14 +12,16 @@
 	margin-right:0;
 	padding-left:0;
 	padding-right:0;
+	position: relative;
 }
 
 .crossword {
-	width: 60%;
-	margin-left: auto;
-	margin-right:auto;
-	padding-left: 0;
-	padding-right:0;
+		width: 65%;
+		margin-left: auto;
+		margin-right:auto;
+		padding-left: 0;
+		padding-right:0;
+
 }
 
 .clues1 {
@@ -81,6 +83,8 @@
 	overflow:hidden;
 	width:12px;
 	height:12px;
+	position: absolute;
+	left: 0px;
 }
 
 .alert {
@@ -99,18 +103,6 @@
 	display: none;
 }
 
-.numbers {
-	float: left;
-	width:15px;
-	display: inline;
-}
-
-.numbersRight {
-	width:15px;
-	float:right;
-	display: inline;
-	color:white;
-}
 #successdiv {
 	background-color: green;
 }
