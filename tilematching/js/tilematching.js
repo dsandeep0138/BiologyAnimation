@@ -1,5 +1,28 @@
 window.onload = function() {
     var grid = document.getElementById("puzzle-grid");
+
+    grid.innerHTML = '';
+    for (i = 0; i < tiles.length; i++) {
+        grid.innerHTML += '<li class="set' + (i + 1) + '">' +
+                '<div class="flip-tile-inner">' +
+                    '<div class="flip-tile-front">' +
+                    '</div>' +
+                    '<div class="flip-tile-back">' +
+                        '<p class="set-text">' + tiles[i] + '</p>' +
+                    '</div>' +
+                '</div>' +
+	    '</li>' +
+	    '<li class="set' + (i + 1) + '">' +
+                '<div class="flip-tile-inner">' +
+                    '<div class="flip-tile-front">' +
+                    '</div>' +
+                    '<div class="flip-tile-back">' +
+                        '<img src="img/' + tiles[i] + '.jpg">' +
+                    '</div>' +
+                '</div>' +
+	    '</li>'
+    }
+
     var numChildren = grid.childElementCount;
     var clickSound = new Audio('assets/click.mp3');
 
