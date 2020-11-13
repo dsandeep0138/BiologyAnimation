@@ -43,7 +43,6 @@ class CrosswordGrid {
 
 	// Add a word to crossword. This adds a word to the array and populates the word on the crossword grid //
     addWord = function (word) {
-		console.log(word);
         if (this.validateWords(word)) {
             this.words.push(word);
             this.addWordToGrid(word);
@@ -144,11 +143,8 @@ for( var row = 0; row < puzzle.size; row++ ){
 			slot.style.backgroundColor = 'white'; 
 			for (i in puzzle.words) {
 				word = puzzle.words[i];
-				console.log(word);
 				if(word.row == row && word.column == col) {
 					slot.innerHTML = '<div class="numbers" style="text-align:left; margin-top: 0px; padding-top:0px;"><span style="font-size: 10px;"><sup>'+word.number+'</sup></span></div>';
-					slot.innerHTML = slot.innerHTML + '<div class="numbersRight" style="text-align:right; margin-top: 0px; padding-top:0px;"><span style="font-size: 14px;"><sup>'+word.number+'</sup></span></div>';
-
 				}
 			}
 		}
@@ -165,7 +161,6 @@ for( var row = 0; row < puzzle.size; row++ ){
 var table = $('<table/>');
 table.append('<th>Across</th>');
 jQuery.each(across, function() {
-	console.log("table" + this);
     table.append( '<tr><td>' + this.Number + ". " +  this.Clue + '</td></tr>' );
 });
 $('#across').append(table);
@@ -181,19 +176,16 @@ $('#down').append(table2);
 $(document).on("keypress paste",".slot", function(e) {
 	isStartingDiv = false;
 	id = this.id;
-	console.log(id);
 	var split = id.split("_");
 	var row = parseInt(split[0]);
 	var col = parseInt(split[1]);
 	for (i in puzzle.words) {
 				word = puzzle.words[i];
-				console.log(word);
 				if(word.row == row && word.column == col) {
 					isStartingDiv = true;
 					this.classList.add("startingDiv");
 				}
 	}
-	console.log(isStartingDiv);	
 	if (this.innerHTML.length == 0 || (isStartingDiv && this.innerHTML.length >= 136)) { // Need to change this to make it more robust
 		e.preventDefault();
 		if (this.contentEditable) {
@@ -231,8 +223,6 @@ document.onkeydown = function(e) {
 			var col = parseInt(split[1]);
 			var nextCol = --col;
 			var nextPossibleId1 =  row+"_"+nextCol;
-			console.log(nextPossibleId1)
-			console.log($("#"+nextPossibleId1).attr("contenteditable"));
 			if ($("#"+nextPossibleId1).attr("contenteditable")) {
 				$("#"+nextPossibleId1).focus();	
 			}
@@ -245,8 +235,6 @@ document.onkeydown = function(e) {
 			var col = parseInt(split[1]);
 			var nextRow = --row;
 			var nextPossibleId1 =  nextRow+"_"+col;
-			console.log(nextPossibleId1)
-			console.log($("#"+nextPossibleId1).attr("contenteditable"));
 			if ($("#"+nextPossibleId1).attr("contenteditable")) {
 				$("#"+nextPossibleId1).focus();	
 			}
@@ -259,8 +247,6 @@ document.onkeydown = function(e) {
 			var col = parseInt(split[1]);
 			var nextCol = ++col;
 			var nextPossibleId1 =  row+"_"+nextCol;
-			console.log(nextPossibleId1)
-			console.log($("#"+nextPossibleId1).attr("contenteditable"));
 			if ($("#"+nextPossibleId1).attr("contenteditable")) {
 				$("#"+nextPossibleId1).focus();	
 			}
@@ -273,8 +259,6 @@ document.onkeydown = function(e) {
 			var col = parseInt(split[1]);
 			var nextRow = ++row;
 			var nextPossibleId1 =  nextRow+"_"+col;
-			console.log(nextPossibleId1)
-			console.log($("#"+nextPossibleId1).attr("contenteditable"));
 			if ($("#"+nextPossibleId1).attr("contenteditable")) {
 				$("#"+nextPossibleId1).focus();	
 			}
@@ -282,7 +266,6 @@ document.onkeydown = function(e) {
 		
 		case 8: 
 		var div = e.target;
-		console.log(div.innerHTML.length);
 		if (div.innerHTML.length == 0 || div.innerHTML.length == 136) {
 				e.preventDefault();
 				return false;
@@ -304,9 +287,6 @@ function findNextDivToFocus(element) {
 	var nextCol = col++;
 	var nextPossibleId1 =  row+"_"+nextCol;
 	var nextPossibleId2 =  nextRow+"_"+col;
-	console.log(nextPossibleId1)
-	console.log(nextPossibleId2)
-	console.log($("#"+nextPossibleId1).attr("contenteditable"));
 	var localTopToBottom = false;
 	var localLeftToRight = false;
 	if ($("#"+nextPossibleId1).attr("contenteditable")) {
