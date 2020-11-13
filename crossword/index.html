@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=800"/>
-	<link rel="stylesheet" href="assets/crossword.css">
+	<link rel="stylesheet" href="css/crossword.css">
     <title>Crossword puzzle</title>
 </head>
 <body>
@@ -15,8 +15,10 @@
 <div class="buttonDiv">
 <input type="button" class= "buttonInput" value="Check Answer" onclick="checkAnswer();"></input>
 </div>
+<div id="resultDiv">
 <div id = "successdiv" class="alert hide">Well Done! You got all answers correct.</div>
 <div id = "failurediv" class="alert hide">Some of the entries were incorrect. Please try again!</div>
+</div>
 </div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>

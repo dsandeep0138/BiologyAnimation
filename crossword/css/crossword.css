@@ -107,6 +107,10 @@
 	display: none;
 }
 
+#resultDiv {
+	height:100px;
+}
+
 #successdiv {
 	background-color: green;
 }
