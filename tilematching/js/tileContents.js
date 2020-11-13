@@ -1,6 +1,9 @@
 var tiles = [
-    "kidney",
-    "liver",
-    "lungs",
-    "pancreas"
+    "cytoskeleton",
+    "golgi apparatus",
+    "lysosome",
+    "mitochondria",
+    "nucleus",
+    "ribosome",
+    "vesicles"
 ];

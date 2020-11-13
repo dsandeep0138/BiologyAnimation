@@ -1,14 +1,21 @@
 window.onload = function() {
     var grid = document.getElementById("puzzle-grid");
+    var randomizedTiles = [];
+
+    for (var i = 0; i < 4; i++) {
+        var idx = Math.floor(Math.random() * tiles.length);
+        randomizedTiles.push(tiles[idx]);
+        tiles.splice(idx, 1);
+    }
 
     grid.innerHTML = '';
-    for (i = 0; i < tiles.length; i++) {
+    for (i = 0; i < 4; i++) {
         grid.innerHTML += '<li class="set' + (i + 1) + '">' +
                 '<div class="flip-tile-inner">' +
                     '<div class="flip-tile-front">' +
                     '</div>' +
                     '<div class="flip-tile-back">' +
-                        '<p class="set-text">' + tiles[i] + '</p>' +
+                        '<p class="set-text">' + randomizedTiles[i] + '</p>' +
                     '</div>' +
                 '</div>' +
 	    '</li>' +
@@ -17,7 +24,7 @@ window.onload = function() {
                     '<div class="flip-tile-front">' +
                     '</div>' +
                     '<div class="flip-tile-back">' +
-                        '<img src="img/' + tiles[i] + '.jpg">' +
+                        '<img src="img/' + randomizedTiles[i] + '.jpg">' +
                     '</div>' +
                 '</div>' +
 	    '</li>'
