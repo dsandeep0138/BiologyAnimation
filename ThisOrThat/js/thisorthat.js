@@ -5,7 +5,7 @@ var q_num=0;
 
     var outputText = document.getElementById("output-text");
     var h2 = document.getElementById("question_no");
-    var p = document.getElementById("question_body");
+        var p = document.getElementById("question_body");
     var button1 = document.getElementById("option1");
     var button2 = document.getElementById("option2");
 
@@ -27,8 +27,8 @@ genQuestion(q_num)
 
     function genQuestion(q_num)
     {
-        h2.innerHTML = "Question " + (q_num+1) + " of " + questions.length;
-        p.innerHTML = questions[q_num]["question"];
+        h2.innerHTML = "Question " + (q_num+1) + " of " + questions.length +" [Topic: "+ questions[q_num]["type"] + "]" ;
+               p.innerHTML = questions[q_num]["question"];
         button1.innerHTML = questions[q_num]["options"][0]
         button2.innerHTML = questions[q_num]["options"][1]
        
@@ -57,7 +57,7 @@ genQuestion(q_num)
          }
          else
          {
-             outputText.innerHTML = "That's Incorrect! Try again!";
+             outputText.innerHTML = questions[q_num]["hint"] ;
          }
          
       
