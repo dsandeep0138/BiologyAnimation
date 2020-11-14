@@ -12,7 +12,8 @@ $(document).ready(function () {
             $children = $con.children();
             if ($children.length == 0) {
                 $con.text($con.attr("id"));
-            } 
+            }
+
             if ($children.hasClass("answer")) {
                 $con.addClass("has-answer");
                 $con.contents().each(function() {
@@ -57,7 +58,7 @@ $(document).ready(function () {
 
     $(".dropBox").dblclick(function() {
         $q = $(this)
-        if($q.hasClass("has-answer")) {
+        if ($q.hasClass("has-answer")) {
             move_to($q.children(), $(".word-bank"));
             $q.css('background', 'lightskyblue');
         }
@@ -67,14 +68,17 @@ $(document).ready(function () {
         var numCorrect = 0;
         $('.dropBox').each(function() {
             $q = $(this);
-            if($q.attr("id") == "#" + $q.children().attr("id")) {
-                numCorrect=numCorrect+1;
+            if ($q.attr("id") == "#" + $q.children().attr("id")) {
+                numCorrect += 1;
                 $q.css('background', 'green');
                 $q.children().draggable('disable');
                 $q.droppable('disable');
                 $q.off('dblclick');
             } else {
-                $q.css('background', 'red');
+                if ($q.hasClass("has-answer")) {
+                    $q.css('background', 'red');
+                }
+
                 $q.children().draggable('enable');
                 $q.droppable('enable');
             }
