@@ -112,6 +112,27 @@ $(document).ready(function() {
             $(".answer").draggable("disable");
             $(".answer").off("dblclick");
             $(".circle").droppable("disable");
+            $(this).prop('disabled', true);
+            $("#reset").prop('disabled', true);
         }
+    });
+
+    $("#reset").click(function() {
+        $(".answer").each(function() {
+            if (moves.value > 0) {
+                $(this).css({'top':'', 'bottom':'', 'left':'', 'right':'', 'border':''});
+                var id = $(this).attr("id");
+                removeFromArray(id);
+
+                $(".answer").draggable("enable");
+                $(".circle").droppable("enable");
+
+                $(".answer").dblclick(function() {
+                    $(this).css({'top':'', 'bottom':'', 'left':'', 'right':'', 'border':''});
+                    var id = $(this).attr("id");
+                    removeFromArray(id);
+                });
+            }
+        });
     });
 });
