@@ -29,33 +29,33 @@
 }
 
 @media screen and (max-width: 480px) {
-			.crossword {
-                width: 400px;
-            }
-			.clues1{
-				 float: left;
-				width: 150px;
-				font-size:18px;
-				text-align:left;
-				display: table-cell;
-				vertical-align:middle;
-				margin-left:0;
-				margin-right:0;
-				padding-left:0;
-				padding-right:0;
-			}
-			.clues2{
-				 float: right;
-				width: 150px;
-				font-size:18px;
-				t	ext-align:left;
-				display: table-cell;
-				vertical-align:middle;
-				margin-left:0;
-				margin-right:0;
-				padding-left:0;
-				padding-right:0;
-			}
+	.crossword {
+		width: 400px;
+	}
+	.clues1{
+		 float: left;
+		width: 150px;
+		font-size:18px;
+		text-align:left;
+		display: table-cell;
+		vertical-align:middle;
+		margin-left:0;
+		margin-right:0;
+		padding-left:0;
+		padding-right:0;
+	}
+	.clues2{
+		 float: right;
+		width: 150px;
+		font-size:18px;
+		text-align:left;
+		display: table-cell;
+		vertical-align:middle;
+		margin-left:0;
+		margin-right:0;
+		padding-left:0;
+		padding-right:0;
+	}
 }
 
 .clues1 {
