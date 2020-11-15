@@ -18,18 +18,17 @@ window.onload = function() {
     };
 
     function genQuestion(q_num) {
-        h2.innerHTML = "Question " + (q_num+1) + " of " + questions.length +" [Topic: "+ questions[q_num]["topic"] + "]" ;
+        h2.innerHTML = "Question " + (q_num+1) + " of " + questions.length + " [Topic: "+ questions[q_num]["topic"] + "]";
         p.innerHTML = questions[q_num]["question"];
         button1.innerHTML = questions[q_num]["options"][0]
         button2.innerHTML = questions[q_num]["options"][1]
     }
 
-    function qFunction(value)
-    {
-        if (value.localeCompare(questions[q_num]["answer"]) == 0)
-        {
+    function qFunction(value) {
+        if (value.localeCompare(questions[q_num]["answer"]) == 0) {
             q_num += 1;
             outputText.innerHTML = "That's right!";
+            outputText.style.color = 'blue';
 
             if (q_num >= questions.length) {
                 document.getElementById("option1").disabled = true;
@@ -41,6 +40,7 @@ window.onload = function() {
             }
         } else {
             outputText.innerHTML = questions[q_num]["hint"];
+            outputText.style.color = 'red';
         }
     }
 }
