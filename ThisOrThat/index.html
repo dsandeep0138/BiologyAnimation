@@ -2,12 +2,13 @@
 <html>
 <head>
     <title>This or That!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             height: 800px;
         }
 
-        #question1, #question2, #question3 {
+        #question {
             background-color: #DCDCDC;
             position: absolute;
             top: 25%;
@@ -17,7 +18,7 @@
             border-radius: 10px;
 	}
 
-        .question {
+        #question_body {
             font-size: 20px;
             font-weight: bold;
             text-align: center;
@@ -48,10 +49,6 @@
             text-align: center;
 	}
 
-        h3 {
-            text-align: center;
-        }
-
         button {
             border-radius: 8px;
             background-color: #34A0FF;
@@ -65,19 +62,17 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
     <script type="text/javascript" src="js/thisorthat.js"></script>
-    <script type="text/javascript" src="js/Contents.js"></script>
+    <script type="text/javascript" src="js/contents.js"></script>
 	
     <h1>Choose This or That!</h1>
-    <div id="question1">
-    
+    <div id="question">
         <h2 id="question_no"></h2>
         
-        <p class="question" id="question_body"></p>
+        <p id="question_body"></p>
 
         <button id = "option1" style = "position: absolute;top: 60%;right:60%; left: 30%;width: 130px; height:50px"></button>
         <button id = "option2" style = "position: absolute;top: 60%;right:30%; left: 60%;width: 130px; height:50px"></button>
     </div>
-
    
     <p id="output-text"></p>
 </body>
