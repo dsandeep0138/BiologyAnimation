@@ -1,7 +1,13 @@
+html, body {
+    height: 800px;
+    width: 100%;
+}
+
 #master-container{
     position: relative;
     width: 100%;
     padding-top: 50%;
+    height: auto;
 }
 
 div.question-container {
@@ -20,28 +26,83 @@ div.question-container {
     background-size: 100%;
 }
 
-@media screen and (max-width: 480px) {
-    div.question-container {
-        left: 5%;
-        transform: none;
+@media screen and (max-width: 480px) { 
+    html, body {
+        height: 800px;
     }
 }
 
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) {
-    div.question-container {
-        left: 5%;
-        transform: none;
+    html, body {
+        height: 1024px;
     }
 }
 
-div.answer{
-    font-weight: bold;
-    text-align: center;
+@media screen and (max-width: 480px), only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+    div#master-container {
+        padding-top: 0;
+        height: 100%;
+    }
+
+    div.question-container {
+        left: 0;
+        transform: none;
+        width: 100%;
+	background-size: 100% 71.5%;
+    }
+
+    div.answer {
+        margin: 1vw !important;
+        font-size: 2.5vw !important;
+        display: inline-block !important;
+    }
+
+    div.answer-container {
+        top: 75% !important;
+	left: 5% !important;
+	width: 90% !important;
+	height: 10% !important;
+    }
+
+    div.word-bank {
+        width: 90% !important;
+	height: 100% !important;
+    }
+
+    div.submit-container {
+        top: 120% !important;
+	padding-top: 0 !important;
+    }
+
+    #submit {
+        font-size: 3vw !important;
+	padding: 10px 30px !important;
+    }
+
+    #result {
+        top: 180% !important;
+        bottom: 0 !important;
+	text-align: center;
+	width: 90%;
+	height: 10%;
+	font-size: 3vw !important;
+    }
 }
 
-div.answer-container{
+div.answer {
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    margin: 2%;
+    font-size: 1.4vw;
+    display: block;
+}
+
+div.answer-container {
     position: absolute;
     top: 10%;
     left: 75%;
@@ -49,7 +110,7 @@ div.answer-container{
     height: 70%;
 }
 
-div.word-bank{
+div.word-bank {
     position: absolute;
     left: 5%;
     right: 5%;
@@ -58,7 +119,7 @@ div.word-bank{
     border: 2px solid black;
 }
 
-div.submit-container{
+div.submit-container {
     position: absolute;
     top: 85%;
     left: 50%;
@@ -69,7 +130,7 @@ div.submit-container{
     padding-top: 7%;
 }
 
-#submit{
+#submit {
     font-size: 1vw;
     background-color: #4CAF50;
     border: none;
@@ -80,7 +141,7 @@ div.submit-container{
 }
 
 /* styling of the individual answer blanks */
-.dropBox{
+.dropBox {
     position: absolute;
     background: lightskyblue;
     border: 2px solid black;
@@ -89,24 +150,26 @@ div.submit-container{
     font-weight: 700;
 }
 
-.dropBox.answer-hover{
+.dropBox.answer-hover {
     background: yellow;
 }
 
-.dropBox.has-answer.answer-hover{
+.dropBox.has-answer.answer-hover {
     background: yellow;
 }
 
-.dropBox.has-answer{
+.dropBox.has-answer {
     background: sandybrown;
 }
 
-.answer{
-    cursor: pointer;
-    margin: 2%;
-    font-size: 1.4vw;
+.dropBox > .answer {
+    margin: 0px;
 }
 
-.dropBox > .answer{
-    margin: 0px;
+#result {
+    position: absolute;
+    bottom: -5%;
+    font-size: 1.5vw;
+    font-weight: bold;
+    float: center;
 }

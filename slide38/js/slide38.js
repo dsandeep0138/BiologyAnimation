@@ -36,6 +36,7 @@ $(document).ready(function () {
             $q.css("top", "");
             $q.css("left", "");
         },
+
         zIndex: 1
     });
 
@@ -46,13 +47,22 @@ $(document).ready(function () {
         classes: {
             "ui-droppable-hover": "answer-hover"
         },
+
         drop: function(event, ui) {
             var $q = $(this);
             $ans = ui.draggable;
-            if($q.hasClass("has-answer")) {
+            if ($q.hasClass("has-answer")) {
                 move_to($q.children(), $(".word-bank"));
             }
+
             move_to($ans, $q);
+        },
+
+        out: function(event, ui) {
+            $q = $(this)
+            if ($q.hasClass("has-answer")) {
+                $q.css('background', 'lightskyblue');
+	    }
         }
     });
 
@@ -85,7 +95,6 @@ $(document).ready(function () {
         });
 
         $('#result').text(`You answered ${numCorrect}/11 questions correctly!`);
-        $('#result').css({'position': 'absolute', 'bottom': '-5%', 'font-size': '1.5vw', 'font-weight': 'bold', 'float': 'center'});
 
         window.setTimeout(function() {
             $('#result').text('');
