@@ -7,6 +7,16 @@ window.onload = function() {
     var button1 = document.getElementById("option1");
     var button2 = document.getElementById("option2");
 
+    var randomizedQuestions = [];
+    var numQuestions = questions.length;
+
+    for (var i = 0; i < numQuestions; i++) {
+        var idx = Math.floor(Math.random() * questions.length);
+        randomizedQuestions.push(questions[idx]);
+        questions.splice(idx, 1);
+    }
+
+    questions = randomizedQuestions;
     genQuestion(q_num);
 
     document.getElementById("option1").onclick = function() {
