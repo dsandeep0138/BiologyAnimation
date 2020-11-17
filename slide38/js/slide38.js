@@ -51,6 +51,9 @@ $(document).ready(function () {
         drop: function(event, ui) {
             var $q = $(this);
             $ans = ui.draggable;
+
+            $q.removeClass('incorrect');
+
             if ($q.hasClass("has-answer")) {
                 move_to($q.children(), $(".word-bank"));
             }
