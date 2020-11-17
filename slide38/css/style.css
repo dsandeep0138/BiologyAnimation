@@ -4,7 +4,7 @@ html, body {
     background-color: white;
 }
 
-#master-container{
+#master-container {
     position: relative;
     width: 100%;
     padding-top: 50%;
@@ -60,7 +60,7 @@ and (max-device-width : 1024px) {
         left: 0;
         transform: none;
         width: 100%;
-	background-size: 100% 71.5%;
+        background-size: 100% 71.5%;
     }
 
     div.answer {
@@ -71,33 +71,33 @@ and (max-device-width : 1024px) {
 
     div.answer-container {
         top: 75% !important;
-	left: 5% !important;
-	width: 90% !important;
-	height: 10% !important;
+        left: 5% !important;
+        width: 90% !important;
+        height: 10% !important;
     }
 
     div.word-bank {
         width: 90% !important;
-	height: 100% !important;
+        height: 100% !important;
     }
 
     div.submit-container {
         top: 120% !important;
-	padding-top: 0 !important;
+        padding-top: 0 !important;
     }
 
     #submit {
         font-size: 3vw !important;
-	padding: 10px 30px !important;
+        padding: 10px 30px !important;
     }
 
     #result {
         top: 180% !important;
         bottom: 0 !important;
-	text-align: center;
-	width: 90%;
-	height: 10%;
-	font-size: 3vw !important;
+        text-align: center;
+        width: 90%;
+        height: 10%;
+        font-size: 3vw !important;
     }
 }
 
@@ -151,7 +151,7 @@ div.submit-container {
 /* styling of the individual answer blanks */
 .dropBox {
     position: absolute;
-    background: lightskyblue;
+    background: #34A0FF;
     border: 2px solid black;
     text-align: center;
     color: black;
@@ -172,6 +172,14 @@ div.submit-container {
 
 .dropBox > .answer {
     margin: 0px;
+}
+
+.dropBox.has-answer.correct {
+    background: #94FFBE;
+}
+
+.dropBox.has-answer.incorrect {
+    background: #BB2525;
 }
 
 #result {

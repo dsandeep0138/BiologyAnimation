@@ -59,10 +59,9 @@ $(document).ready(function () {
         },
 
         out: function(event, ui) {
-            $q = $(this)
-            if ($q.hasClass("has-answer")) {
-                $q.css('background', 'lightskyblue');
-	    }
+            $q = $(this);
+            $q.removeClass('correct');
+            $q.removeClass('incorrect');
         }
     });
 
@@ -70,7 +69,8 @@ $(document).ready(function () {
         $q = $(this)
         if ($q.hasClass("has-answer")) {
             move_to($q.children(), $(".word-bank"));
-            $q.css('background', 'lightskyblue');
+            $q.removeClass('correct');
+            $q.removeClass('incorrect');
         }
     });
 
@@ -80,13 +80,13 @@ $(document).ready(function () {
             $q = $(this);
             if ($q.attr("id") == "#" + $q.children().attr("id")) {
                 numCorrect += 1;
-                $q.css('background', 'green');
+                $q.addClass('correct');
                 $q.children().draggable('disable');
                 $q.droppable('disable');
                 $q.off('dblclick');
             } else {
                 if ($q.hasClass("has-answer")) {
-                    $q.css('background', 'red');
+                    $q.addClass('incorrect');
                 }
 
                 $q.children().draggable('enable');
