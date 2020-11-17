@@ -28,6 +28,7 @@ window.onload = function() {
     };
 
     function genQuestion(q_num) {
+        document.getElementById("next").disabled = true;
         h2.innerHTML = "Question " + (q_num+1) + " of " + questions.length + " [Topic: "+ questions[q_num]["topic"] + "]";
         p.innerHTML = questions[q_num]["question"];
         button1.innerHTML = questions[q_num]["options"][0]
@@ -43,6 +44,7 @@ window.onload = function() {
             if (q_num >= questions.length) {
                 document.getElementById("option1").disabled = true;
                 document.getElementById("option2").disabled = true;
+                document.getElementById("next").disabled = true;
                 h2.disabled = true;
                 p.disabled = true;
             } else {
@@ -51,6 +53,23 @@ window.onload = function() {
         } else {
             outputText.innerHTML = questions[q_num]["hint"];
             outputText.style.color = 'red';
+            document.getElementById("option1").disabled = true;
+            document.getElementById("option2").disabled = true;
+
+            if (q_num < questions.length - 1) {
+                document.getElementById("next").disabled = false;
+                outputText.innerHTML += " or click Next";
+	    }
         }
     }
+
+    document.getElementById("next").onclick = function() {
+        document.getElementById("option1").disabled = false;
+        document.getElementById("option2").disabled = false;
+
+        q_num += 1;
+        outputText.innerHTML = "";
+
+        genQuestion(q_num);
+    };
 }

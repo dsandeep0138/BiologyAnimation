@@ -13,7 +13,7 @@
             position: absolute;
             top: 30%;
             left: 20%;
-            right: 20%;
+            right: 25%;
             height: 50%;
             border-radius: 10px;
         }
@@ -58,6 +58,16 @@
             font-size: 14px;
         }
 
+	#next {
+            position: absolute;
+            background-color: #DCDCDC;
+            top: 30%;
+            right: 20%;
+            width: 5%;
+            height: 50%;
+            border-radius: 10px;
+	}
+
         #options {
             display: flex;
             flex-direction: row;
@@ -81,12 +91,35 @@
             }
         }
 
+        @media only screen and (min-device-width: 768px)
+        and (max-device-width: 1024px) {
+            #question {
+                right: 20%;
+            }
+
+	    #next {
+                top: 80%;
+                left: 20%;
+                right: 20%;
+                height: 50px;
+                width: 60%;
+	    }
+        }
+
         @media only screen and (max-device-width: 480px) {
             #question {
                 left: 5%;
                 right: 5%;
                 height: 90%;
             }
+
+	    #next {
+                top: 120%;
+                left: 5%;
+                right: 5%;
+                height: 50px;
+                width: 90%;
+	    }
 
             h1 {
                 top: 0;
@@ -119,5 +152,6 @@
             <button id="option2"></button>
         </div>
     </div>
+    <button id="next">Next</button>
 </body>
 </html>
