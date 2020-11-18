@@ -37,18 +37,18 @@ window.onload = function() {
 
     function qFunction(value) {
         if (value.localeCompare(questions[q_num]["answer"]) == 0) {
-            q_num += 1;
             outputText.innerHTML = "That's right!";
             outputText.style.color = 'blue';
+            document.getElementById("option1").disabled = true;
+            document.getElementById("option2").disabled = true;
 
-            if (q_num >= questions.length) {
-                document.getElementById("option1").disabled = true;
-                document.getElementById("option2").disabled = true;
+            if (q_num >= questions.length - 1) {
                 document.getElementById("next").disabled = true;
                 h2.disabled = true;
                 p.disabled = true;
             } else {
-                genQuestion(q_num);
+                document.getElementById("next").disabled = false;
+                outputText.innerHTML += " Click Next to continue.";
             }
         } else {
             outputText.innerHTML = questions[q_num]["hint"];
@@ -58,7 +58,7 @@ window.onload = function() {
 
             if (q_num < questions.length - 1) {
                 document.getElementById("next").disabled = false;
-                outputText.innerHTML += " or click Next";
+                outputText.innerHTML += " or Click Next.";
 	    }
         }
     }
