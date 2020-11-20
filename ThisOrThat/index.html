@@ -66,6 +66,7 @@
             width: 5%;
             height: 50%;
             border-radius: 10px;
+            border: 1px solid black;
 	}
 
         #options {
@@ -110,11 +111,11 @@
             #question {
                 left: 5%;
                 right: 5%;
-                height: 90%;
+                height: 50%;
             }
 
 	    #next {
-                top: 120%;
+                top: 80%;
                 left: 5%;
                 right: 5%;
                 height: 50px;
@@ -127,6 +128,15 @@
 
             #output-text {
                 top: 15%;
+            }
+        }
+
+        /* iPhone 5 only */
+        @media only screen and (device-width: 320px)
+        and (device-height: 568px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+            #options {
+                flex-direction: row;
             }
         }
     </style>
