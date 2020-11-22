@@ -54,9 +54,7 @@ body {
 
 .answer-container {
     top: 0;
-    left: 850px;
-    width: 150px;
-    position: absolute;
+    position: relative;
     border: 3px solid black;
 }
 
@@ -77,9 +75,11 @@ body {
 }
 
 #submit {
-    top: 420px;
-    left: 50px;
-    position: absolute;
+    width: 100px;
+    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
 }
 
 #game-actions {
@@ -109,7 +109,7 @@ body {
     font-weight: bold;
 }
 
-#moves[readonly]{
+#moves[readonly] {
     width: 70px;
     height: 16px;
     text-align: center;
@@ -121,6 +121,78 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.submission {
+    left: 850px;
+    height: 100%;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+@media screen and (max-width: 480px) {
+    #venn {
+        width: 400px;
+    }
+
+    #game-actions {
+        width: 400px;
+        left: 0;
+    }
+
+    #moves-div {
+        left: 150px;
+    }
+
+    .circle {
+        width: 400px;
+        height: 300px;
+    }
+
+    #c2 {
+        top: 150px;
+        left: 0;
+    }
+
+    #c2 .venn-header {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+
+    #both {
+        top: 150px;
+        left: 0;
+        width: 400px;
+        height: 150px;
+    }
+
+    .submission {
+        top: 500px;
+        left: 15px;
+        right: 15px;
+        width: auto;
+        position: absolute;
+        box-sizing: border-box;
+    }
+
+    .answer-container {
+        position: relative;
+        border: 3px solid black;
+    }
+
+    .word-bank {
+        height: 0;
+    }
+
+    .answer {
+        width: 100px;
+        display: inline-block;
+        box-sizing: border-box;
+    }
 }
 
 @media only screen 
@@ -139,11 +211,17 @@ and (max-device-width : 1024px) {
 	left: 0;
     }
 
-    .answer-container {
+    .submission {
         top: 450px;
-        left: 15px;
-        width: 680px;
+        left: 0;
+        margin: 10px auto;
+        width: 700px;
         position: absolute;
+        box-sizing: border-box;
+    }
+
+    .answer-container {
+        position: relative;
         border: 3px solid black;
     }
 
@@ -151,11 +229,5 @@ and (max-device-width : 1024px) {
         width: 150px;
         display: inline-block;
 	box-sizing: border-box;
-    }
-
-    #submit {
-        top: 250px;
-        left: 50%;
-	transform: translateX(-50%);
     }
 }
