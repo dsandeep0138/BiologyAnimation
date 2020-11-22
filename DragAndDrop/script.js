@@ -1,12 +1,11 @@
-
 function onDragStart(event) {
-  event
-    .dataTransfer
-    .setData('text/plain', event.target.id);
+	event.dataTransfer.setData('text/plain', event.target.id);
+	event.currentTarget.style
+}
 
-    event
-    .currentTarget
-    .style
+function onTouchStart(event) {
+	event.dataTransfer.setData('text/plain', event.target.id);
+	event.currentTarget.style
 }
 
 function onDragOver(event) {
@@ -14,16 +13,12 @@ function onDragOver(event) {
 }
 
 function onDrop(event) {
-  const id = event
-    .dataTransfer
-    .getData('text');
+  const id = event.dataTransfer.getData('text');
 
-    const draggableElement = document.getElementById(id);
-    const dropzone = event.target;
-    if (dropzone.id == id+"a"){
-      dropzone.appendChild(draggableElement);
-    }
-    event
-    .dataTransfer
-    .clearData();
+  const draggableElement = document.getElementById(id);
+  const dropzone = event.target;
+  if (dropzone.id == id+"a"){
+    dropzone.appendChild(draggableElement);
+  }
+  event.dataTransfer.clearData();
 }
