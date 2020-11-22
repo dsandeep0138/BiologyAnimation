@@ -26,6 +26,8 @@ $(document).ready(function() {
         }
     }
 
+    $("#reset").prop('disabled', true);
+
     $(".answer").draggable({
         revert: "invalid",
         revertDuration: 0
@@ -113,11 +115,18 @@ $(document).ready(function() {
             $(".answer").off("dblclick");
             $(".circle").droppable("disable");
             $(this).prop('disabled', true);
-            $("#reset").prop('disabled', true);
+            $("#reset").prop('disabled', false);
         }
     });
 
     $("#reset").click(function() {
+        $(".answer").draggable("enable");
+        $(".circle").droppable("enable");
+        $("#submit").prop('disabled', false);
+        $("#reset").prop('disabled', true);
+
+        moves.value = 3;
+
         $(".answer").each(function() {
             if (moves.value > 0) {
                 $(this).css({'top':'', 'bottom':'', 'left':'', 'right':'', 'border':''});
