@@ -1,3 +1,7 @@
+html, body {
+    height: 600px;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -69,6 +73,7 @@ body {
     background: white;
     box-shadow: 1px 1px rgba(0, 0, 0, 0.12);
     border-radius: 5px;
+    display: block;
 }
 
 #submit {
@@ -80,7 +85,7 @@ body {
 #game-actions {
     margin: 30px auto;
     margin-top: 20px;
-    width: 1000px;
+    width: 900px;
     left: 100px;
     position: relative;
 }
@@ -116,4 +121,41 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+    html, body {
+        height: 1000px;
+    }
+
+    #venn {
+        width: 700px;
+    }
+
+    #game-actions {
+        width: 550px;
+	left: 0;
+    }
+
+    .answer-container {
+        top: 450px;
+        left: 15px;
+        width: 680px;
+        position: absolute;
+        border: 3px solid black;
+    }
+
+    .answer {
+        width: 150px;
+        display: inline-block;
+	box-sizing: border-box;
+    }
+
+    #submit {
+        top: 250px;
+        left: 50%;
+	transform: translateX(-50%);
+    }
 }
