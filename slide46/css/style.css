@@ -11,6 +11,14 @@ html, body {
     height: auto;
 }
 
+#header {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 20px;
+}
+
 div.question-container {
     position: absolute;
     float: center;
@@ -18,7 +26,7 @@ div.question-container {
     margin-right: auto;
     text-align: center;
     top: 0;
-    left: 50%;
+    left: 40%;
     transform: translateX(-50%);
     height: 100%;
     width: 65%;
@@ -60,7 +68,7 @@ and (max-device-width : 1024px) {
         left: 0;
         transform: none;
         width: 100%;
-        background-size: 100% 71.5%;
+        background-size: 100% 49%;
     }
 
     div.answer {
@@ -70,10 +78,10 @@ and (max-device-width : 1024px) {
     }
 
     div.answer-container {
-        top: 75% !important;
+        top: 55% !important;
         left: 5% !important;
         width: 90% !important;
-        height: 10% !important;
+        height: 15% !important;
     }
 
     div.word-bank {
@@ -112,7 +120,7 @@ div.answer {
 
 div.answer-container {
     position: absolute;
-    top: 10%;
+    top: 0;
     left: 75%;
     width: 15%; 
     height: 70%;
