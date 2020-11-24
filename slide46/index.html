@@ -1,87 +1,62 @@
 <!DOCTYPE html>
-<!-- saved from url=(0086)file:///C:/Users/sanje/Documents/Texas%20A&m/606/Project/jqueryDemo/jQueryExample.html -->
 <html>
-<head>
-        <style>
-            body {
-                font-size: 32px;
-                height: 500px;
-            }
-            
-  
+  <head>
+    <title>Drag and Drop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <!-- jquery scripts -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-
-            .question{
-              font-size: 15px;
-                border: 2px solid black;
-                background: #34A0FF;
-                text-align: center;
-
-            }
-
-            .answer{
-                 position: relative;
-                font-size: 12px;
-                margin: 5px;
-		        cursor: pointer;
-                width: 90px;
-            }
-            .question-container {
-                position:absolute;
-                text-align: center;
-                float : left;
-                width: 550px;
-                height:450px;
-            }
-
-            .answer-container{
-                float : left ; position: absolute;
-                text-align: left;
-                top: 60px; left: 750px;
-                width: auto; height: auto;
-                opacity: 1.0;
-                background-color: white;border: 2px solid black;
-            }
-        </style>
-    </head>
-    <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <!-- iframe resizer -->
+    <script type="text/javascript" src="js/iframeResizer.min.js"></script>
     <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
 
-    <script type="text/javascript" src="DD_slide46.js"></script>
-    <div id="masterContainer" class="masterContainer" data-viewportNarrow="false">
-    <div class="question-container" >
-        <img width="800" style= "z-index:-1" src="slide_46_matching_games.jpg">
-        <button id="submit" style = "float : right; ">Submit</button>
-        <div class="question" style="position: absolute;top: 50px;left: 10px;width: 115px;height: 25px" qid="1">1</div>
-        <div class="question" style="position: absolute;top: 105px;left: 10px;width: 115px; height: 25px" qid="2">2</div>
-        <div class="question" style="position: absolute;top: 155px;left: 10px;width: 115px;height: 25px" qid="3">3</div>
-        <div class="question" style="position: absolute;top: 190px;left: 10px;width: 115px;height: 25px" qid="4">4</div>
-        <div class="question" style="position: absolute;top: 255px;left: 10px;width: 115px; height:25px" qid="5">5</div>
-        <div class="question" style="position: absolute;top: 55px;left: 555px;width: 115px; height:25px" qid="6">6</div>
-        <div class="question" style="position: absolute;top: 105px;left: 555px;width: 115px; height:25px" qid="7">7</div>
-        <div class="question" style="position: absolute;top: 140px;left: 555px;width: 115px; height:25px" qid="8">8</div>
-        <div class="question" style="position: absolute;top: 185px;left: 555px;width: 115px; height:25px" qid="9">9</div>
-        <div class="question" style="position: absolute;top: 215px;left: 555px;width: 115px; height:25px" qid="10">10</div>
-        <div class="question" style="position: absolute;top: 250px;left: 555px;width: 115px; height:25px" qid="11">11</div>
-    </div>
-    <div class= "answer-container">
-      <div class="answer" id="1" >Golgi apparatus</div>
-      <div class="answer" id="2" >Cell membrane</div>
-      <div class="answer" id="3" >Chloroplasts</div>
-      <div class="answer" id="4" >Vacuole</div>
-      <div class="answer" id="5" >Cell wall</div>
-      <div class="answer" id="11" >Mitochondria</div>
-      <div class="answer" id="10" >Cytosol</div>
-      <div class="answer" id="9" >Smooth ER</div>
-      <div class="answer" id="8" >Nucleolus</div>
-      <div class="answer" id="7" >Nucleus</div>
-      <div class="answer" id="6" >Rough ER</div>
-    </div>
-  </div>
-  <div id = "hint" style="float:right;"><div>
-  <div id="viewPortNarrowThreshold"></div >
+    <!-- Include touch punch -->
+    <script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
 
+    <!-- drag and drop animation script -->
+    <script type="text/javascript" src="js/slide46.js"></script>
 
-</body></html>
+    <div id="header">Eukaryotic Plant Cell Review</div>
+
+    <div id="master-container">
+      <div class="question-container" >
+        <div id = "#1" class = "dropBox" style = "top: 7.5%;left: 6%;width: 17%; height: 4%">#1</div>
+        <div id = "#2" class = "dropBox" style = "top: 16%;left: 6%;width: 17%; height: 4%">#2</div>
+        <div id = "#3" class = "dropBox" style = "top: 22%;left: 6%;width: 17%; height: 4%">#3</div>
+        <div id = "#4" class = "dropBox" style = "top: 28%;left: 6.5%;width: 17%; height: 4%">#4</div>
+        <div id = "#5" class = "dropBox" style = "top: 37.5%;left: 6%;width: 17%; height: 4%">#5</div>
+        <div id = "#6" class = "dropBox" style = "top: 9%;left: 72.5%;width: 17%; height: 4%">#6</div>
+        <div id = "#7" class = "dropBox" style = "top: 16%;left: 72.5%;width: 17%; height: 4%">#7</div>
+        <div id = "#8" class = "dropBox" style = "top: 21%;left: 72.5%;width: 17%; height: 4%">#8</div>
+        <div id = "#9" class = "dropBox" style = "top: 27%;left: 72.5%;width: 17%; height: 4%">#9</div>
+        <div id = "#10" class = "dropBox" style = "top: 32%;left: 72.5%;width: 17%; height: 4%">#10</div>
+        <div id = "#11" class = "dropBox" style = "top: 37%;left: 72.5%;width: 17%; height: 4%">#11</div>
+      </div>
+      <div class= "answer-container">
+        <div class="word-bank">
+          <div class="answer" id="4">Vacuole</div>
+          <div class="answer" id="3">Chloroplast</div>
+          <div class="answer" id="2">Cell membrane</div>
+          <div class="answer" id="1">Golgi apparatus</div>
+          <div class="answer" id="11">Mitochondria</div>
+          <div class="answer" id="10">Cytosol</div>
+          <div class="answer" id="9">Smooth ER</div>
+          <div class="answer" id="8">Nucleolus</div>
+          <div class="answer" id="7">Nucleus</div>
+          <div class="answer" id="6">Rough ER</div>
+          <div class="answer" id="5">Cell Wall</div>
+        </div>
+        <div class="submit-container">
+          <button id="submit" >Submit</button>
+        </div>
+        <div id = "result"></div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
