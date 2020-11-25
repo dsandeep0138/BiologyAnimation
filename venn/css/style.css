@@ -1,5 +1,5 @@
 html, body {
-    height: 600px;
+    height: 800px;
 }
 
 body {
@@ -80,6 +80,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     position: relative;
+    box-sizing: content-box;
 }
 
 #game-actions {
@@ -125,7 +126,7 @@ body {
 
 .submission {
     left: 850px;
-    height: 100%;
+    height: auto;
     width: 150px;
     display: flex;
     flex-direction: column;
