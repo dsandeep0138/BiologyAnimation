@@ -1,252 +1,58 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
+    <script type="text/javascript" src="js/slide16.js"></script>
 
+    <style>
+	.header {
+            padding-top: 5%;
+            text-align: center;
+	    font-size: 30px;
+	}
 
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
+	.container {
+	    margin: 10px auto;
+            display: flex;
+	    justify-content: center;
+	    flex-wrap: wrap;
+	}
 
-<style>
-            body {
-               font-family: sans-serif, arial, helvetica;
-               background-image: url('slide_14.png');
-               background-repeat: no-repeat;
-               background-size: 60% 80%;
-               image.style.width = 100px
-               image.style.height = 'auto'
+	.column {
+            margin: 30px;
+            background-color: #808080;
+	}
 
-            }
-            .box {
-            	width: 300px;
-                height: 50px;
-
-                border: solid 1px;
-
-            }
-            button {
-
-  background-color: #008CBA; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-}
-
-            #a {
-
-                background-color: #808080;
-  border: none;
-  color: white;
-  padding: 10px 22px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-
-            }
-			#b {
-
-                background-color: #808080;
-  border: none;
-  color: white;
-  padding: 140px 22px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin-left:5em
-
-
-            }
-            #c {
-
-                background-color: #808080;
-  border: none;
-  color: white;
-  padding: 140px 22px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin-left:0.1em
-
-
-            }
-            .container {
-               border: 1px solid ;
-               width: 30px;
-               height: 200px;
-            }
-
-			p {
-  display: block;
-  margin-top: 1em;
-  margin-bottom: 2em;
-  margin-left: 0;
-  margin-right: 0;
-  font-size: 20px;
-  color: green;
-  margin-left:33em
-}
-    * {
-  box-sizing: border-box;
-}
-
-.column {
-height: 200px;
-
-  float: left;
-  width: 330px;
-  padding: 0.5px;
-}
-
-/* Clearfix (clear floats) */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* here*/
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* The actual popup */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-/* Toggle this class - hide and show the popup */
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-  </style>
-
-
+	.image {
+            opacity: 0;
+	}
+    </style>
 
 </head>
 
 <body>
 
+<p class="header">
+    <span class="prokaryote">Prokaryotic</span> or
+    <span class="eukaryote">Eukaryotic</span>?
+</p>
 
-
-
-
-<p>Prokaryote or Eukaryote  ?</p>
- <div >
-
-
-        <div class= "box" id="a"></div>
-		 <div class= "box" id="b"></div>
-		  <div class= "box" id="c"></div>
-
-
-    </div>
-
-
-
-<div class="row">
-  <div class="column">
-    <img src="slide_16_3.png" width="200" height="200">
+<div class="container">
+  <div class="column" id="column1">
+   <img class="image" id="image1" src="slide_16.png" width="200px" height="200px">
   </div>
-  <div class="column">
-   <img src="slide_16.png" width="200" height="200">
+  <div class="column" id="column2">
+   <img class="image" id="image2" src="slide_16_2.png" width="200px" height="200px">
   </div>
-  <div class="column">
-   <img src="slide_16_2.png" width="200" height="200">
+  <div class="column" id="column3">
+    <img class="image" id="image3" src="slide_16_3.png" width="200px" height="200px">
+  </div>
+  <div class="column" id="column4">
+   <img class="image" id="image4" src="slide_16_4.png" width="200px" height="200px">
   </div>
 </div>
 
-    <script type="text/javascript">
-
-    $( "#a" ).click(function() {
-    $( "#a" ).remove();});
-
-		$( "#b" ).click(function() {
-  		$( "#b" ).remove();});
-
-        $( "#c" ).click(function() {
-  		$( "#c" ).remove();});
-
-		$("#a").css({width: 500, top: 20, left: 700, position:'absolute'});
-		$("#b").css({width: 500, top: 80, left: 600, position:'absolute'});
-		$("#c").css({top: 80, left: 0, position:'absolute'});
-
-		$(document).ready(function(){
-		  $("#a").click(function(){
-		     $("p").show();
-		  });
-		});
-		$(document).ready(function(){
-		  $("#b").click(function(){
-		     $("p").show();
-		  });
-		});
-    </script>
-
-    <body style="text-align:center">
-
-
-
-    <div class="popup" onclick="myFunction()"><h2> </br> </br> Click me to get the answer!</h2>
-      <span class="popuptext" id="myPopup">Prokaryote!</span>
-    </div>
-
-    <script>
-    // When the user clicks on div, open the popup
-    function myFunction() {
-      var popup = document.getElementById("myPopup");
-      popup.classList.toggle("show");
-    }
-    </script>
-   </body>
-
 </body>
+</html>
