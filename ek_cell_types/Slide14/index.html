@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
+
+<style>
+body {
+  font-family: sans-serif, arial, helvetica;
+}
+
+.container{
+  display: block;
+  text-align:center;
+  width: 100%;
+}
+.box {
+  width: 95%;
+  height: 50px;
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+p.content {
+  font-size: 20px;
+  color: green;
+}
+
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <img src='slide_14.png' style="width:70%"></img>
+
+
+    <div class= "box">Organelle Defination</div>
+
+
+  </div>
+
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $( ".box" ).click(function() {
+        $( ".box" ).remove();
+        $(".container").append("<p class='content'>These membrane bound structures are called organelles</p>");
+      });
+    });
+  </script>
+
+
+
+</body>

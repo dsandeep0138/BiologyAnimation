@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
+
+<style>
+            body {
+               
+            }
+            .box {
+            	width: 300px;
+                height: 50px;
+                
+                border: solid 1px;
+                
+            }
+            
+            
+            #a {
+                
+                background: #92d14f;
+		cursor: pointer;
+		float : left;
+                position: relative;
+                margin-top: 95px;
+		
+                
+            }
+            
+            .container {
+       border: 1px solid #DDDDDD;
+       width: 880px;
+       height: 800px;
+    }
+    
+  </style>
+
+
+
+</head>
+
+<body>
+
+
+
+<div id="masterContainer" class="masterContainer" data-viewportNarrow="false">
+     <div class="container">
+       <img src="Slide4.png" width="100%">
+	<div class= "box" id="a"></div>
+    </div>
+</div>
+<div id="viewPortNarrowThreshold"></div >
+
+
+
+    <script type="text/javascript">
+    	
+  		$( "#a" ).click(function() {
+  		$( "#a" ).remove();});
+		$("#a").css({top: -180, left: 293, position:'relative'});
+       
+		$(document).ready(function(){
+		  $("button").click(function(){
+		     $("p").hide();
+		  });
+		});
+    </script>
+
+</body>
